@@ -1,6 +1,3 @@
-# USB Cam Driver
 ros-humble-usb-cam
-
-# Image Transport Plugins
 ros-humble-image-transport
 ros-humble-image-transport-plugins

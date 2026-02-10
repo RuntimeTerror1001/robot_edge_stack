@@ -1,64 +1,58 @@
 services:
-  # --------------------------------------------------------
-  # DISCOVERY SERVER
-  # --------------------------------------------------------
   discovery:
-    image: robot_edge_stack_discovery:humble
+    image: ros:humble-ros-core
     network_mode: host
-    restart: unless-stopped
-    runtime: nvidia
+    restart: always
     environment:
       - ROS_DOMAIN_ID=42
-      - FASTRTPS_DEFAULT_PROFILES_FILE=/ws/fastdds/server_fastdds.xml
+      - FASTRTPS_DEFAULT_PROFILES_FILE=/root/.fastdds/server_fastdds.xml
     volumes:
-      - ./fastdds:/ws/fastdds:ro
+      - /home/redpaladin/.fastdds:/root/.fastdds:ro
     command: >
-      bash -lc "fastdds discovery -i 0"
+      bash -lc "
+        apt-get update &&
+        apt-get install -y fastdds-tools &&
+        fastdds discovery -i 0
+      "
 
-  # --------------------------------------------------------
-  # SKELETON (Testing)
-  # --------------------------------------------------------
   skeleton:
-    image: robot_edge_stack_base:humble
+    image: ros:humble-ros-core
     network_mode: host
-    restart: unless-stopped
-    runtime: nvidia
+    restart: always
     environment:
       - ROS_DOMAIN_ID=42
       - RMW_IMPLEMENTATION=rmw_fastrtps_cpp
-      - FASTRTPS_DEFAULT_PROFILES_FILE=/ws/fastdds/jetson_fastdds.xml
+      - FASTRTPS_DEFAULT_PROFILES_FILE=/root/.fastdds/fastdds.xml
     volumes:
-      - ./:/ws:rw
+      - /home/redpaladin/.fastdds:/root/.fastdds:ro
+    command: >
+      bash -lc "
+        ros2 topic pub /heartbeat std_msgs/msg/String \"{data: 'alive'}\" -r 1
+      "
     depends_on:
       - discovery
-    command: >
-      bash -lc "ros2 topic pub /heartbeat std_msgs/msg/String \"{data: 'alive'}\""
 
-  # --------------------------------------------------------
-  # FRONT CAMERA
-  # --------------------------------------------------------
   camera_front:
-    image: robot_edge_stack_camera:humble
+    image: ros:humble-ros-base
     network_mode: host
-    restart: unless-stopped
-    runtime: nvidia
+    restart: always
     environment:
       - ROS_DOMAIN_ID=42
       - RMW_IMPLEMENTATION=rmw_fastrtps_cpp
-      - FASTRTPS_DEFAULT_PROFILES_FILE=/ws/fastdds/jetson_fastdds.xml
+      - FASTRTPS_DEFAULT_PROFILES_FILE=/root/.fastdds/fastdds.xml
     volumes:
-      - ./fastdds:/ws/fastdds:ro
+      - /home/redpaladin/.fastdds:/root/.fastdds:ro
     devices:
       - /dev/video0:/dev/video0
       - /dev/video1:/dev/video1
     group_add:
       - video
-    depends_on:
-      - discovery
     command:
       - bash
       - -lc
       - |
+        apt-get update &&
+        apt-get install -y ros-humble-usb-cam &&
         ros2 run usb_cam usb_cam_node_exe \
           --ros-args \
           -r "__ns:=/front_camera" \
@@ -69,32 +63,30 @@ services:
           -p "framerate:=30.0" \
           -p "pixel_format:=mjpeg2rgb" \
           -p "camera_name:=front_camera"
+    depends_on:
+      - discovery
 
-  # --------------------------------------------------------
-  # REAR CAMERA
-  # --------------------------------------------------------
   camera_rear:
-    image: robot_edge_stack_camera:humble
+    image: ros:humble-ros-base
     network_mode: host
-    restart: unless-stopped
-    runtime: nvidia
+    restart: always
     environment:
       - ROS_DOMAIN_ID=42
       - RMW_IMPLEMENTATION=rmw_fastrtps_cpp
-      - FASTRTPS_DEFAULT_PROFILES_FILE=/ws/fastdds/jetson_fastdds.xml
+      - FASTRTPS_DEFAULT_PROFILES_FILE=/root/.fastdds/fastdds.xml
     volumes:
-      - ./fastdds:/ws/fastdds:ro
+      - /home/redpaladin/.fastdds:/root/.fastdds:ro
     devices:
       - /dev/video2:/dev/video2
       - /dev/video3:/dev/video3
     group_add:
       - video
-    depends_on:
-      - discovery
     command:
       - bash
       - -lc
       - |
+        apt-get update &&
+        apt-get install -y ros-humble-usb-cam &&
         ros2 run usb_cam usb_cam_node_exe \
           --ros-args \
           -r "__ns:=/rear_camera" \
@@ -105,3 +97,5 @@ services:
           -p "framerate:=30.0" \
           -p "pixel_format:=mjpeg2rgb" \
           -p "camera_name:=rear_camera"
+    depends_on:
+      - discovery
