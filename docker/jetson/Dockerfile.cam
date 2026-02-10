@@ -1,0 +1,10 @@
+FROM robot_edge_stack_base:humble
+
+SHELL ["/bin/bash", "-lc"]
+ENV DEBIAN_FRONTEND=noninteractive
+
+COPY docker/jetson/apt-packages.cam.txt /tmp/apt-packages.txt
+RUN apt-get update \
+    && xargs -a /tmp/apt-packages.txt apt-get install -y --no-install-recommends \
+    && rm -rf /var/lib/apt/lists/* \
+    && rm -f /tmp/apt-packages.txt

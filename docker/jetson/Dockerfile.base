@@ -1,0 +1,38 @@
+FROM nvcr.io/nvidia/l4t-jetpack:r36.4.0
+
+SHELL ["/bin/bash", "-lc"]
+ENV DEBIAN_FRONTEND=noninteractive
+
+# --- system deps ---
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release \
+    && rm -rf /var/lib/apt/lists/*
+
+# --- ROS 2 Repo ---
+RUN curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key \
+    | gpg --dearmor -o /usr/share/keyrings/ros-archive-keyring.gpg && \
+    echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(lsb_release -cs) main" \
+    > /etc/apt/sources.list.d/ros2.list
+
+# --- ROS base ---
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    ros-humble-ros-base \
+    && rm -rf /var/lib/apt/lists/*
+
+# --- extra base packages ---
+COPY docker/jetson/apt-packages.base.txt /tmp/apt-packages.txt
+RUN apt-get update && \
+    xargs -a /tmp/apt-packages.txt apt-get install -y --no-install-recommends && \
+    rm -rf /var/lib/apt/lists/* \
+    && rm -f /tmp/apt-packages.txt 
+
+COPY docker/jetson/entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
+ENTRYPOINT ["/entrypoint.sh"]
+
+WORKDIR /ws
+CMD ["bash"]

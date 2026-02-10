@@ -1,0 +1,30 @@
+FROM ubuntu:22.04
+
+SHELL ["/bin/bash", "-lc"]
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    ca-certificates curl gnupg lsb-release \
+    && rm -rf /var/lib/apt/lists/*
+
+# ROS 2 apt repo
+# ROS 2 apt repo
+RUN mkdir -p /etc/apt/keyrings \
+ && curl -fsSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key \
+    | gpg --dearmor -o /etc/apt/keyrings/ros-archive-keyring.gpg \
+ && echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/ros-archive-keyring.gpg] \
+    http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" \
+    > /etc/apt/sources.list.d/ros2.list
+
+COPY docker/operator/apt-packages.txt /tmp/apt-packages.txt
+RUN apt-get update \
+    && xargs -a /tmp/apt-packages.txt apt-get install -y --no-install-recommends \
+    && rm -rf /var/lib/apt/lists/* \
+    && rm -f /tmp/apt-packages.txt
+
+COPY docker/operator/entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
+ENV RMW_IMPLEMENTATION=rmw_fastrtps_cpp
+ENTRYPOINT ["/entrypoint.sh"]
+CMD ["bash"]

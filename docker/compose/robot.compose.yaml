@@ -1,0 +1,105 @@
+services:
+  # --------------------------------------------------------
+  # DISCOVERY SERVER
+  # --------------------------------------------------------
+  discovery:
+    image: robot_edge_stack_discovery:humble
+    network_mode: host
+    restart: unless-stopped
+    runtime: nvidia
+    environment:
+      - ROS_DOMAIN_ID=42
+      - FASTRTPS_DEFAULT_PROFILES_FILE=/ws/fastdds/server_fastdds.xml
+    volumes:
+      - ../../fastdds:/ws/fastdds:ro 
+    command: >
+      bash -lc "fastdds discovery -i 0"
+
+  # --------------------------------------------------------
+  # SKELETON (Testing)
+  # --------------------------------------------------------
+  skeleton:
+    image: robot_edge_stack_base:humble
+    network_mode: host
+    restart: unless-stopped
+    runtime: nvidia
+    environment:
+      - ROS_DOMAIN_ID=42
+      - RMW_IMPLEMENTATION=rmw_fastrtps_cpp
+      - FASTRTPS_DEFAULT_PROFILES_FILE=/ws/fastdds/jetson_fastdds.xml
+    volumes:
+      - ../..:/ws:rw
+    depends_on:
+      - discovery
+    command: >
+      bash -lc "ros2 topic pub /heartbeat std_msgs/msg/String \"{data: 'alive'}\""
+
+  # --------------------------------------------------------
+  # FRONT CAMERA
+  # --------------------------------------------------------
+  camera_front:
+    image: robot_edge_stack_camera:humble
+    network_mode: host
+    restart: unless-stopped
+    runtime: nvidia
+    environment:
+      - ROS_DOMAIN_ID=42
+      - RMW_IMPLEMENTATION=rmw_fastrtps_cpp
+      - FASTRTPS_DEFAULT_PROFILES_FILE=/ws/fastdds/jetson_fastdds.xml
+    volumes:
+      - ../../fastdds:/ws/fastdds:ro
+    devices:
+      - /dev/video0:/dev/video0
+      - /dev/video1:/dev/video1
+    group_add:
+      - video
+    depends_on:
+      - discovery
+    command: >
+      bash -lc "
+        ros2 run usb_cam usb_cam_node_exe
+          --ros-args
+          -r __ns:=/front_camera
+          -r __node:=usb_cam_front
+          -p video_device:=/dev/video0
+          -p image_width:=640
+          -p image_height:=480
+          -p framerate:=30.0
+          -p pixel_format:=mjpeg2rgb
+          -p camera_name:=front_camera
+      "
+
+  # --------------------------------------------------------
+  # REAR CAMERA
+  # --------------------------------------------------------
+  camera_rear:
+    image: robot_edge_stack_camera:humble
+    network_mode: host
+    restart: unless-stopped
+    runtime: nvidia
+    environment:
+      - ROS_DOMAIN_ID=42
+      - RMW_IMPLEMENTATION=rmw_fastrtps_cpp
+      - FASTRTPS_DEFAULT_PROFILES_FILE=/ws/fastdds/jetson_fastdds.xml
+    volumes:
+      - ../../fastdds:/ws/fastdds:ro
+    devices:
+      - /dev/video2:/dev/video2
+      - /dev/video3:/dev/video3
+    group_add:
+      - video
+    depends_on:
+      - discovery
+    command: >
+      bash -lc "
+        ros2 run usb_cam usb_cam_node_exe
+          --ros-args
+          -r __ns:=/rear_camera
+          -r __node:=usb_cam_rear
+          -p video_device:=/dev/video2
+          -p image_width:=640
+          -p image_height:=480
+          -p framerate:=30.0
+          -p pixel_format:=mjpeg2rgb
+          -p camera_name:=rear_camera
+      "

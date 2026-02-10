@@ -1,0 +1,18 @@
+services:
+  operator:
+    build:
+      context: ../..
+      dockerfile: docker/operator/Dockerfile 
+    network_mode: host
+    environment:
+      - ROS_DOMAIN_ID=42
+      - RMW_IMPLEMENTATION=rmw_fastrtps_cpp
+      - FASTRTPS_DEFAULT_PROFILES_FILE=/ws/fastdds/operator_fastdds.xml
+      - DISPLAY=${DISPLAY}
+      - QT_X11_NO_MITSHM=1
+    volumes:
+      - ../..:/ws:rw 
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+    working_dir: /ws
+    tty: true
+    stdin_open: true

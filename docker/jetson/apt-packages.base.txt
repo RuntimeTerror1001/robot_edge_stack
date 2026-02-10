@@ -1,0 +1,8 @@
+# Networking / Debugginhg
+iproute2
+net-tools
+iputils-ping
+tcpdump
+
+# ROS Middleware
+ros-humble-rmw-fastrtps-cpp
