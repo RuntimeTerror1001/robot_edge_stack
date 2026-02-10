@@ -18,7 +18,7 @@ jetson-logs:
 	docker compose $(PROJECT_DIR) -f $(COMPOSE_DIR)/robot.compose.yaml logs -f $(s)
 
 laptop-build:
-	docker compose $(PROJECT_DIR) -f $(COMPOSE_DIR)/dev.compose.yaml build
+	docker compose $(PROJECT_DIR) -f $(COMPOSE_DIR)/dev.compose.yaml build --no-cache
 
 laptop-up:
 	docker compose $(PROJECT_DIR) -f $(COMPOSE_DIR)/dev.compose.yaml up

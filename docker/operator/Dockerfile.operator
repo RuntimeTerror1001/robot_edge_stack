@@ -8,7 +8,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 # ROS 2 apt repo
-# ROS 2 apt repo
 RUN mkdir -p /etc/apt/keyrings \
  && curl -fsSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key \
     | gpg --dearmor -o /etc/apt/keyrings/ros-archive-keyring.gpg \
@@ -21,6 +20,8 @@ RUN apt-get update \
     && xargs -a /tmp/apt-packages.txt apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/* \
     && rm -f /tmp/apt-packages.txt
+
+RUN echo "source /opt/ros/humble/setup.bash" >> /etc/bash.bashrc
 
 COPY docker/operator/entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh

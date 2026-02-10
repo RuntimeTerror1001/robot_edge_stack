@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 set -e
 
-souorce /opt/ros/humble/setup.bash
+source /opt/ros/humble/setup.bash
 
-if [ -f /work/install/setup.bash ]; then
-    source /work/install/setup.bash
+if [ -f /ws/install/setup.bash ]; then
+    source /ws/install/setup.bash
 fi
 
 exec "$@"

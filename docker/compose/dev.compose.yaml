@@ -1,8 +1,8 @@
 services:
   operator:
     build:
-      context: ../..
-      dockerfile: docker/operator/Dockerfile 
+      context: .
+      dockerfile: docker/operator/Dockerfile.operator
     network_mode: host
     environment:
       - ROS_DOMAIN_ID=42
@@ -11,7 +11,7 @@ services:
       - DISPLAY=${DISPLAY}
       - QT_X11_NO_MITSHM=1
     volumes:
-      - ../..:/ws:rw 
+      - ./:/ws:rw
       - /tmp/.X11-unix:/tmp/.X11-unix:rw
     working_dir: /ws
     tty: true
