@@ -4,6 +4,7 @@ gnupg
 lsb-release
 sudo
 bash-completion
+build-essential
 iproute2
 iputils-ping
 net-tools

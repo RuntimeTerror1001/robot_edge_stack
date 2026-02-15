@@ -16,6 +16,13 @@ services:
     working_dir: /ws
     tty: true
     stdin_open: true
+    command: |
+      bash -lc "
+        cd /ws &&
+        colcon build --packages-select stack_msgs --build-base /ws/build_operator --install-base /ws/install_operator --cmake-args -DCMAKE_BUILD_TYPE=Release &&
+        source /ws/install_operator/setup.bash &&
+        bash
+      "
 
   # --------------------------------------------------------
   # NETWORK MONITOR (measures latency/loss from laptop side)
@@ -31,10 +38,10 @@ services:
       - FASTRTPS_DEFAULT_PROFILES_FILE=/ws/fastdds/operator_fastdds.xml
     volumes:
       - ./:/ws:rw
-    command: | 
+    command: |
       bash -lc "
         cd /ws &&
-        colcon build --packages-select stack_msgs health_monitor --cmake-args -DCMAKE_BUILD_TYPE=Release &&
-        source install/setup.bash &&
+        colcon build --packages-select stack_msgs health_monitor --build-base /ws/build_netmon --install-base /ws/install_netmon --cmake-args -DCMAKE_BUILD_TYPE=Release &&
+        source /ws/install_netmon/setup.bash &&
         ros2 run health_monitor network_monitor --ros-args -p jetson_ip:=192.168.1.100 -p ethernet_interface:=enp8s0
       "

@@ -1,0 +1,13 @@
+.git
+.gitignore
+build
+build_*/
+install
+install_*/
+log
+**/__pycache__
+*.pyc
+*.pyo
+*.swp
+*.bak
+.DS_Store

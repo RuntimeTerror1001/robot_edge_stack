@@ -1,5 +1,11 @@
-.dockerignore
 build/
-log/
+build_*/
 install/
+install_*/
+log/
 .vscode/
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.env
