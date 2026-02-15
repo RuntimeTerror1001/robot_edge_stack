@@ -66,7 +66,7 @@ services:
           -p "video_device:=/dev/video0" \
           -p "image_width:=640" \
           -p "image_height:=480" \
-          -p "framerate:=30.0" \
+          -p "framerate:=15.0" \
           -p "pixel_format:=mjpeg2rgb" \
           -p "camera_name:=front_camera"
 
@@ -102,7 +102,7 @@ services:
           -p "video_device:=/dev/video2" \
           -p "image_width:=640" \
           -p "image_height:=480" \
-          -p "framerate:=30.0" \
+          -p "framerate:=15.0" \
           -p "pixel_format:=mjpeg2rgb" \
           -p "camera_name:=rear_camera"
 
