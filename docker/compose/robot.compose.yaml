@@ -105,3 +105,85 @@ services:
           -p "framerate:=30.0" \
           -p "pixel_format:=mjpeg2rgb" \
           -p "camera_name:=rear_camera"
+
+  # --------------------------------------------------------
+  # SYSTEM METRICS (publishes /system/metrics)
+  # --------------------------------------------------------
+  system_metrics:
+    image: robot_edge_stack_base:humble
+    network_mode: host
+    restart: unless_stopped
+    runtimme: nvidia
+    environment:
+      - ROS_DOMAIN_ID=42
+      - RMW_IMPLEMENTATION=rmw_fastrtps_cpp
+      - FASTRTPS_DEFAULT_PROFILES_FILE=/ws/fastdds/jetson_fastdds.xml
+    volumes:
+      - ./:/ws:rw
+    depends_on:
+      - discovery
+    command: >
+      bash -lc "
+        cd /ws &&
+        colcon build --packages-select stack_msgs health_monitor
+          --cmake-args -DCMAKE_BUILD_TYPE=Release &&
+        source install/setup.bash &&
+        ros2 run health_monitor system_metrics
+      "
+  
+  # --------------------------------------------------------
+  # WATCHDOG (monitors all nodes, restarts dead containers)
+  # --------------------------------------------------------
+  watchdog:
+    image: robot_edge_stack_base:humble
+    network_mode: host
+    restart: unless_stopped
+    runtime: nvidia
+    environment: 
+      - ROS_DOMAIN_ID=42
+      - RMW_IMPLEMENTATION=rmw_fastrtps_cpp
+      - FASTRTPS_DEFAULT_PROFILES_FILE=/ws/fastdds/jetson_fastdds.xml
+    volumes:
+      - ./:/ws:rw
+      - /var/run/docker.sock:/var/run/docker,sock
+    depends_on:
+      - discovery
+      - camera_front
+      - camera_rear
+      - skeleton
+    command: >
+      bash -lc "
+        cd /ws &&
+        colcon build --packages-select stack_msgs health_monitor
+          --cmake-args -DCMAKE_BUILD_TYPE=Release &&
+        source install/setup.bash &&
+        ros2 run health_monitor watchdog \
+          --ros-args -p compose_project_dir:=/ws
+      "
+
+  # --------------------------------------------------------
+  # BANDWIDTH MANAGER (adaptive FPS control)
+  # --------------------------------------------------------
+  bandwidth_manager:
+    image: robot_edge_stack_base:humble
+    network_mode: host
+    restart: unless_stopped
+    runtime: nvidia
+    environment:
+      - ROS_DOMAIN_ID=42
+      - RMW_IMPLEMENTATION=rmw_fastrtps_cpp
+      - FASTRTPS_DEFAULT_PROFILES_FILE=/ws/fastdds/jetson_fastdds.xml
+    volumes:
+      ./:/ws:rw
+    depends_on:
+      - discovery
+      - system_metrics
+    command: >
+      bash -lc "
+        cd /ws &&
+        colcon build --packages-select stack_msgs health_monitor bandwidth_manager
+          --cmake-args -DCMAKE_BUILD_TYPE=Release &&
+        source install/setup.bash &&
+        ros2 run bandwidth_manager bandwidth_manager_node \
+          --ros-args -p config_file:=/ws/src/bandwidth_manager/config/bandwidth_config.yaml
+      "
