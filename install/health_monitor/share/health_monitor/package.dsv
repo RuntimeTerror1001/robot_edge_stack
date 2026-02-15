@@ -1,6 +1,0 @@
-source;share/health_monitor/hook/pythonpath.ps1
-source;share/health_monitor/hook/pythonpath.dsv
-source;share/health_monitor/hook/pythonpath.sh
-source;share/health_monitor/hook/ament_prefix_path.ps1
-source;share/health_monitor/hook/ament_prefix_path.dsv
-source;share/health_monitor/hook/ament_prefix_path.sh

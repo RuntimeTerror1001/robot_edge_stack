@@ -1,5 +1,0 @@
-[console_scripts]
-network_monitor = health_monitor.network_monitor_node:main
-system_metrics = health_monitor.system_metrics_node:main
-watchdog = health_monitor.watchdog_node:main
-

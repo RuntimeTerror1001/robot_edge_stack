@@ -1,3 +1,0 @@
-[console_scripts]
-bandwidth_manager = bandwidth_manager.bandwidth_manager_node:main
-

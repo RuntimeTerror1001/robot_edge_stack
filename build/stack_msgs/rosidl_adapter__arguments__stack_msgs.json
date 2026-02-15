@@ -1,7 +1,0 @@
-{
-  "package_name": "stack_msgs",
-  "non_idl_tuples": [
-    "/ws/src/stack_msgs:msg/NetworkHealth.msg",
-    "/ws/src/stack_msgs:msg/SystemMetrics.msg"
-  ]
-}

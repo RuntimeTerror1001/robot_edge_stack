@@ -1,6 +1,0 @@
-Invoking command in '/ws/build/stack_msgs': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /ws/src/stack_msgs -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/ws/install/stack_msgs
-Invoked command in '/ws/build/stack_msgs' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /ws/src/stack_msgs -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/ws/install/stack_msgs
-Invoking command in '/ws/build/stack_msgs': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /ws/build/stack_msgs -- -j6 -l6
-Invoked command in '/ws/build/stack_msgs' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /ws/build/stack_msgs -- -j6 -l6
-Invoking command in '/ws/build/stack_msgs': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /ws/build/stack_msgs
-Invoked command in '/ws/build/stack_msgs' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /ws/build/stack_msgs
