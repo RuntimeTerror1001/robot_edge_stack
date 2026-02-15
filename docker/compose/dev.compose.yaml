@@ -31,14 +31,10 @@ services:
       - FASTRTPS_DEFAULT_PROFILES_FILE=/ws/fastdds/operator_fastdds.xml
     volumes:
       - ./:/ws:rw
-    command: > 
+    command: | 
       bash -lc "
         cd /ws &&
-        colcon build --packages-select stack_msgs health_monitor
-        --cmake-args -DCMAKE_BUILD_TYPE=Release &&
+        colcon build --packages-select stack_msgs health_monitor --cmake-args -DCMAKE_BUILD_TYPE=Release &&
         source install/setup.bash &&
-        ros2 run health_monitor network_monitor \
-          --ros-args \
-          -p jetson_ip:=192.168.1.100 \
-          -p ethernet_interface:=enp8s0
+        ros2 run health_monitor network_monitor --ros-args -p jetson_ip:=192.168.1.100 -p ethernet_interface:=enp8s0
       "

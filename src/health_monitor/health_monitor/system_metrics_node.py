@@ -118,24 +118,24 @@ class SystemMetricsNode(Node):
             base = '/sys/devices/system/cpu/cpufreq/policy0'
             with open(f'{base}/scaling_cur_freq') as f:
                 cur = int(f.read().strip())
-	    with open(f'{base}/scaling_min_freq') as f:
-	        min_freq = int(f.read().strip())
+            with open(f'{base}/scaling_min_freq') as f:
+                min_freq = int(f.read().strip())
             with open(f'{base}/scaling_max_freq') as f:
                 max_freq = int(f.read().strip())
 
-            # Governer idles down to min_freq normally - is not throttling.
-	    # Only flag throttled if pinned at min while max is much higher
-  	    # And we can't scale up (i.e. something is forcing down).
-	    # Cross-check : if cur is at min but temp is cool, its is idling.
-	    try:
-	        with open('/sys/class/thermal/thermal_zone1/temp') as f:
-		    temp_mc = int(f.read().strip())  # millicelsius
-		temp_c = temp_mc / 1000.0
-		# At idle temps (<65C), min freq = governor choice, not throttle
-		if temp_c < 65.0:
-		    return False
-	    except Exception:
-		pass
+            # Governor idles down to min_freq normally — not throttling.
+            # Only flag throttled if pinned at min while max is much higher
+            # AND we can't scale up (i.e. something is forcing us down).
+            # Cross-check: if cur is at min but temp is cool, it's just idling.
+            try:
+                with open('/sys/class/thermal/thermal_zone1/temp') as f:
+                    temp_mc = int(f.read().strip())  # millicelsius
+                temp_c = temp_mc / 1000.0
+                # At idle temps (<65°C), min freq = governor choice, not throttle
+                if temp_c < 65.0:
+                    return False
+            except Exception:
+                pass
 
             return cur <= min_freq and max_freq > min_freq * 2
 
