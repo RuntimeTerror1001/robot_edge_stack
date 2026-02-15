@@ -3,3 +3,4 @@ net-tools
 iputils-ping
 tcpdump
 ros-humble-rmw-fastrtps-cpp
+python3-colcon-common-extensions

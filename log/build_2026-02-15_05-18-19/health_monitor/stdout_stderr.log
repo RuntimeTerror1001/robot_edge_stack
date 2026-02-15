@@ -1,0 +1,45 @@
+running egg_info
+creating ../../build/health_monitor/health_monitor.egg-info
+writing ../../build/health_monitor/health_monitor.egg-info/PKG-INFO
+writing dependency_links to ../../build/health_monitor/health_monitor.egg-info/dependency_links.txt
+writing entry points to ../../build/health_monitor/health_monitor.egg-info/entry_points.txt
+writing requirements to ../../build/health_monitor/health_monitor.egg-info/requires.txt
+writing top-level names to ../../build/health_monitor/health_monitor.egg-info/top_level.txt
+writing manifest file '../../build/health_monitor/health_monitor.egg-info/SOURCES.txt'
+reading manifest file '../../build/health_monitor/health_monitor.egg-info/SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file '../../build/health_monitor/health_monitor.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /ws/build/health_monitor/build
+creating /ws/build/health_monitor/build/lib
+creating /ws/build/health_monitor/build/lib/health_monitor
+copying health_monitor/system_metrics_node.py -> /ws/build/health_monitor/build/lib/health_monitor
+copying health_monitor/network_monitor_node.py -> /ws/build/health_monitor/build/lib/health_monitor
+copying health_monitor/__init__.py -> /ws/build/health_monitor/build/lib/health_monitor
+copying health_monitor/watchdog_node.py -> /ws/build/health_monitor/build/lib/health_monitor
+running install
+running install_lib
+creating /ws/install/health_monitor/lib/python3.10/site-packages/health_monitor
+copying /ws/build/health_monitor/build/lib/health_monitor/system_metrics_node.py -> /ws/install/health_monitor/lib/python3.10/site-packages/health_monitor
+copying /ws/build/health_monitor/build/lib/health_monitor/network_monitor_node.py -> /ws/install/health_monitor/lib/python3.10/site-packages/health_monitor
+copying /ws/build/health_monitor/build/lib/health_monitor/__init__.py -> /ws/install/health_monitor/lib/python3.10/site-packages/health_monitor
+copying /ws/build/health_monitor/build/lib/health_monitor/watchdog_node.py -> /ws/install/health_monitor/lib/python3.10/site-packages/health_monitor
+byte-compiling /ws/install/health_monitor/lib/python3.10/site-packages/health_monitor/system_metrics_node.py to system_metrics_node.cpython-310.pyc
+byte-compiling /ws/install/health_monitor/lib/python3.10/site-packages/health_monitor/network_monitor_node.py to network_monitor_node.cpython-310.pyc
+byte-compiling /ws/install/health_monitor/lib/python3.10/site-packages/health_monitor/__init__.py to __init__.cpython-310.pyc
+byte-compiling /ws/install/health_monitor/lib/python3.10/site-packages/health_monitor/watchdog_node.py to watchdog_node.cpython-310.pyc
+running install_data
+creating /ws/install/health_monitor/share/ament_index
+creating /ws/install/health_monitor/share/ament_index/resource_index
+creating /ws/install/health_monitor/share/ament_index/resource_index/packages
+copying resource/health_monitor -> /ws/install/health_monitor/share/ament_index/resource_index/packages
+copying package.xml -> /ws/install/health_monitor/share/health_monitor
+creating /ws/install/health_monitor/share/health_monitor/config
+running install_egg_info
+Copying ../../build/health_monitor/health_monitor.egg-info to /ws/install/health_monitor/lib/python3.10/site-packages/health_monitor-0.1.0-py3.10.egg-info
+running install_scripts
+Installing network_monitor script to /ws/install/health_monitor/lib/health_monitor
+Installing system_metrics script to /ws/install/health_monitor/lib/health_monitor
+Installing watchdog script to /ws/install/health_monitor/lib/health_monitor
+writing list of installed files to '/ws/build/health_monitor/install.log'

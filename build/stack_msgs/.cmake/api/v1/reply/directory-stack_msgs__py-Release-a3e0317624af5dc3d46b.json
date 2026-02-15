@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "stack_msgs__py",
+		"source" : "/ws/build/stack_msgs/stack_msgs__py"
+	}
+}

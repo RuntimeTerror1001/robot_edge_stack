@@ -1,0 +1,254 @@
+[0.000000] (-) TimerEvent: {}
+[0.000386] (stack_msgs) JobQueued: {'identifier': 'stack_msgs', 'dependencies': OrderedDict()}
+[0.000925] (bandwidth_manager) JobQueued: {'identifier': 'bandwidth_manager', 'dependencies': OrderedDict([('stack_msgs', '/ws/install/stack_msgs')])}
+[0.001206] (health_monitor) JobQueued: {'identifier': 'health_monitor', 'dependencies': OrderedDict([('stack_msgs', '/ws/install/stack_msgs')])}
+[0.001448] (stack_msgs) JobStarted: {'identifier': 'stack_msgs'}
+[0.019510] (stack_msgs) JobProgress: {'identifier': 'stack_msgs', 'progress': 'cmake'}
+[0.021025] (stack_msgs) JobProgress: {'identifier': 'stack_msgs', 'progress': 'build'}
+[0.022321] (stack_msgs) Command: {'cmd': ['/usr/bin/cmake', '--build', '/ws/build/stack_msgs', '--', '-j6', '-l6'], 'cwd': '/ws/build/stack_msgs', 'env': OrderedDict([('HOSTNAME', 'RedJetson'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/usr/local/cuda/lib64:'), ('HOME', '/root'), ('OLDPWD', '/ws'), ('ROS_PYTHON_VERSION', '3'), ('LC_CTYPE', 'C.UTF-8'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('NVIDIA_DRIVER_CAPABILITIES', 'all'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('FASTRTPS_DEFAULT_PROFILES_FILE', '/ws/fastdds/jetson_fastdds.xml'), ('RMW_IMPLEMENTATION', 'rmw_fastrtps_cpp'), ('ROS_DOMAIN_ID', '42'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('DEBIAN_FRONTEND', 'noninteractive'), ('PWD', '/ws/build/stack_msgs'), ('CUDA_HOME', '/usr/local/cuda'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('NVIDIA_VISIBLE_DEVICES', 'all'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.097051] (-) TimerEvent: {}
+[0.125369] (stack_msgs) StdoutLine: {'line': b'[  2%] Built target stack_msgs__cpp\n'}
+[0.132505] (stack_msgs) StdoutLine: {'line': b'[ 12%] Built target stack_msgs__rosidl_generator_c\n'}
+[0.147421] (stack_msgs) StdoutLine: {'line': b'[ 12%] Built target ament_cmake_python_copy_stack_msgs\n'}
+[0.177014] (stack_msgs) StdoutLine: {'line': b'[ 25%] Built target stack_msgs__rosidl_typesupport_introspection_cpp\n'}
+[0.177417] (stack_msgs) StdoutLine: {'line': b'[ 33%] Built target stack_msgs__rosidl_typesupport_fastrtps_cpp\n'}
+[0.179272] (stack_msgs) StdoutLine: {'line': b'[ 53%] Built target stack_msgs__rosidl_typesupport_cpp\n'}
+[0.179583] (stack_msgs) StdoutLine: {'line': b'[ 53%] Built target stack_msgs__rosidl_typesupport_introspection_c\n'}
+[0.194110] (stack_msgs) StdoutLine: {'line': b'[ 74%] Built target stack_msgs__rosidl_typesupport_fastrtps_c\n'}
+[0.194518] (stack_msgs) StdoutLine: {'line': b'[ 74%] Built target stack_msgs__rosidl_typesupport_c\n'}
+[0.197141] (-) TimerEvent: {}
+[0.237179] (stack_msgs) StdoutLine: {'line': b'[ 74%] Built target stack_msgs\n'}
+[0.281136] (stack_msgs) StdoutLine: {'line': b'[ 76%] Built target stack_msgs__py\n'}
+[0.297313] (-) TimerEvent: {}
+[0.332177] (stack_msgs) StdoutLine: {'line': b'[ 84%] Built target stack_msgs__rosidl_generator_py\n'}
+[0.376943] (stack_msgs) StdoutLine: {'line': b'[ 94%] Built target stack_msgs__rosidl_typesupport_introspection_c__pyext\n'}
+[0.377327] (stack_msgs) StdoutLine: {'line': b'[ 94%] Built target stack_msgs__rosidl_typesupport_c__pyext\n'}
+[0.381844] (stack_msgs) StdoutLine: {'line': b'[100%] Built target stack_msgs__rosidl_typesupport_fastrtps_c__pyext\n'}
+[0.397410] (-) TimerEvent: {}
+[0.498013] (-) TimerEvent: {}
+[0.572348] (stack_msgs) StdoutLine: {'line': b'running egg_info\n'}
+[0.573639] (stack_msgs) StdoutLine: {'line': b'writing stack_msgs.egg-info/PKG-INFO\n'}
+[0.574182] (stack_msgs) StdoutLine: {'line': b'writing dependency_links to stack_msgs.egg-info/dependency_links.txt\n'}
+[0.574612] (stack_msgs) StdoutLine: {'line': b'writing top-level names to stack_msgs.egg-info/top_level.txt\n'}
+[0.578548] (stack_msgs) StdoutLine: {'line': b"reading manifest file 'stack_msgs.egg-info/SOURCES.txt'\n"}
+[0.579679] (stack_msgs) StdoutLine: {'line': b"writing manifest file 'stack_msgs.egg-info/SOURCES.txt'\n"}
+[0.598075] (-) TimerEvent: {}
+[0.645493] (stack_msgs) StdoutLine: {'line': b'[100%] Built target ament_cmake_python_build_stack_msgs_egg\n'}
+[0.668233] (stack_msgs) CommandEnded: {'returncode': 0}
+[0.669905] (stack_msgs) JobProgress: {'identifier': 'stack_msgs', 'progress': 'install'}
+[0.690699] (stack_msgs) Command: {'cmd': ['/usr/bin/cmake', '--install', '/ws/build/stack_msgs'], 'cwd': '/ws/build/stack_msgs', 'env': OrderedDict([('HOSTNAME', 'RedJetson'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/usr/local/cuda/lib64:'), ('HOME', '/root'), ('OLDPWD', '/ws'), ('ROS_PYTHON_VERSION', '3'), ('LC_CTYPE', 'C.UTF-8'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('NVIDIA_DRIVER_CAPABILITIES', 'all'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('FASTRTPS_DEFAULT_PROFILES_FILE', '/ws/fastdds/jetson_fastdds.xml'), ('RMW_IMPLEMENTATION', 'rmw_fastrtps_cpp'), ('ROS_DOMAIN_ID', '42'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('DEBIAN_FRONTEND', 'noninteractive'), ('PWD', '/ws/build/stack_msgs'), ('CUDA_HOME', '/usr/local/cuda'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('NVIDIA_VISIBLE_DEVICES', 'all'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.698250] (-) TimerEvent: {}
+[0.712556] (stack_msgs) StdoutLine: {'line': b'-- Install configuration: "Release"\n'}
+[0.713704] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/share/ament_index/resource_index/rosidl_interfaces/stack_msgs\n'}
+[0.714381] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs\n'}
+[0.715035] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg\n'}
+[0.715387] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/detail\n'}
+[0.715739] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/detail/network_health__struct.h\n'}
+[0.717048] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/detail/system_metrics__functions.c\n'}
+[0.717407] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/detail/system_metrics__functions.h\n'}
+[0.718098] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/detail/network_health__functions.h\n'}
+[0.718309] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/detail/network_health__type_support.h\n'}
+[0.719017] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/detail/system_metrics__type_support.h\n'}
+[0.719218] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/detail/network_health__functions.c\n'}
+[0.719683] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/detail/system_metrics__struct.h\n'}
+[0.720860] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/network_health.h\n'}
+[0.721091] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/system_metrics.h\n'}
+[0.721305] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/rosidl_generator_c__visibility_control.h\n'}
+[0.721522] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/environment/library_path.sh\n'}
+[0.721738] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/environment/library_path.dsv\n'}
+[0.721983] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/lib/libstack_msgs__rosidl_generator_c.so\n'}
+[0.722190] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs\n'}
+[0.722394] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg\n'}
+[0.722597] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/detail\n'}
+[0.722805] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/detail/system_metrics__rosidl_typesupport_fastrtps_c.h\n'}
+[0.723038] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/detail/network_health__rosidl_typesupport_fastrtps_c.h\n'}
+[0.723250] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[0.723455] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/lib/libstack_msgs__rosidl_typesupport_fastrtps_c.so\n'}
+[0.723658] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs\n'}
+[0.724274] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg\n'}
+[0.724429] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/detail\n'}
+[0.724562] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/detail/network_health__type_support.c\n'}
+[0.724690] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/detail/system_metrics__type_support.c\n'}
+[0.724817] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/detail/system_metrics__rosidl_typesupport_introspection_c.h\n'}
+[0.724982] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/detail/network_health__rosidl_typesupport_introspection_c.h\n'}
+[0.725112] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[0.725241] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/lib/libstack_msgs__rosidl_typesupport_introspection_c.so\n'}
+[0.725370] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/lib/libstack_msgs__rosidl_typesupport_c.so\n'}
+[0.725495] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs\n'}
+[0.725620] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg\n'}
+[0.725744] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/rosidl_generator_cpp__visibility_control.hpp\n'}
+[0.725868] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/detail\n'}
+[0.725991] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/detail/system_metrics__builder.hpp\n'}
+[0.726115] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/detail/network_health__type_support.hpp\n'}
+[0.726239] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/detail/network_health__struct.hpp\n'}
+[0.726363] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/detail/network_health__traits.hpp\n'}
+[0.726487] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/detail/system_metrics__struct.hpp\n'}
+[0.726611] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/detail/system_metrics__type_support.hpp\n'}
+[0.726756] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/detail/network_health__builder.hpp\n'}
+[0.726883] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/detail/system_metrics__traits.hpp\n'}
+[0.727008] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/system_metrics.hpp\n'}
+[0.727134] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/network_health.hpp\n'}
+[0.727260] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs\n'}
+[0.727385] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg\n'}
+[0.727509] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[0.727634] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/detail\n'}
+[0.727763] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/detail/dds_fastrtps\n'}
+[0.727923] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/detail/network_health__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[0.728050] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/detail/system_metrics__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[0.728172] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/lib/libstack_msgs__rosidl_typesupport_fastrtps_cpp.so\n'}
+[0.728294] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs\n'}
+[0.728413] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg\n'}
+[0.728533] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/detail\n'}
+[0.728672] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/detail/network_health__type_support.cpp\n'}
+[0.728800] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/detail/system_metrics__rosidl_typesupport_introspection_cpp.hpp\n'}
+[0.728922] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/detail/system_metrics__type_support.cpp\n'}
+[0.729041] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/detail/network_health__rosidl_typesupport_introspection_cpp.hpp\n'}
+[0.729162] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/lib/libstack_msgs__rosidl_typesupport_introspection_cpp.so\n'}
+[0.729281] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/lib/libstack_msgs__rosidl_typesupport_cpp.so\n'}
+[0.729399] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/environment/pythonpath.sh\n'}
+[0.729519] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/environment/pythonpath.dsv\n'}
+[0.729637] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/local/lib/python3.10/dist-packages/stack_msgs-0.0.1-py3.10.egg-info\n'}
+[0.729759] (stack_msgs) StdoutLine: {'line': b'-- Installing: /ws/install/stack_msgs/local/lib/python3.10/dist-packages/stack_msgs-0.0.1-py3.10.egg-info/PKG-INFO\n'}
+[0.729879] (stack_msgs) StdoutLine: {'line': b'-- Installing: /ws/install/stack_msgs/local/lib/python3.10/dist-packages/stack_msgs-0.0.1-py3.10.egg-info/top_level.txt\n'}
+[0.730030] (stack_msgs) StdoutLine: {'line': b'-- Installing: /ws/install/stack_msgs/local/lib/python3.10/dist-packages/stack_msgs-0.0.1-py3.10.egg-info/dependency_links.txt\n'}
+[0.730166] (stack_msgs) StdoutLine: {'line': b'-- Installing: /ws/install/stack_msgs/local/lib/python3.10/dist-packages/stack_msgs-0.0.1-py3.10.egg-info/SOURCES.txt\n'}
+[0.730286] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/local/lib/python3.10/dist-packages/stack_msgs\n'}
+[0.730406] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/local/lib/python3.10/dist-packages/stack_msgs/_stack_msgs_s.ep.rosidl_typesupport_c.c\n'}
+[0.730525] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/local/lib/python3.10/dist-packages/stack_msgs/_stack_msgs_s.ep.rosidl_typesupport_fastrtps_c.c\n'}
+[0.730647] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/local/lib/python3.10/dist-packages/stack_msgs/msg\n'}
+[0.730767] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/local/lib/python3.10/dist-packages/stack_msgs/msg/_system_metrics_s.c\n'}
+[0.730885] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/local/lib/python3.10/dist-packages/stack_msgs/msg/_network_health.py\n'}
+[0.731005] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/local/lib/python3.10/dist-packages/stack_msgs/msg/_network_health_s.c\n'}
+[0.731125] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/local/lib/python3.10/dist-packages/stack_msgs/msg/_system_metrics.py\n'}
+[0.731244] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/local/lib/python3.10/dist-packages/stack_msgs/msg/__init__.py\n'}
+[0.731362] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/local/lib/python3.10/dist-packages/stack_msgs/stack_msgs_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so\n'}
+[0.731483] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/local/lib/python3.10/dist-packages/stack_msgs/stack_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so\n'}
+[0.731604] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/local/lib/python3.10/dist-packages/stack_msgs/stack_msgs_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so\n'}
+[0.731725] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/local/lib/python3.10/dist-packages/stack_msgs/_stack_msgs_s.ep.rosidl_typesupport_introspection_c.c\n'}
+[0.731843] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/local/lib/python3.10/dist-packages/stack_msgs/__init__.py\n'}
+[0.731995] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/local/lib/python3.10/dist-packages/stack_msgs/libstack_msgs__rosidl_generator_py.so\n'}
+[0.786035] (stack_msgs) StdoutLine: {'line': b"Listing '/ws/install/stack_msgs/local/lib/python3.10/dist-packages/stack_msgs'...\n"}
+[0.786444] (stack_msgs) StdoutLine: {'line': b"Listing '/ws/install/stack_msgs/local/lib/python3.10/dist-packages/stack_msgs/msg'...\n"}
+[0.796104] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/local/lib/python3.10/dist-packages/stack_msgs/stack_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so\n'}
+[0.796480] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/local/lib/python3.10/dist-packages/stack_msgs/stack_msgs_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so\n'}
+[0.796736] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/local/lib/python3.10/dist-packages/stack_msgs/stack_msgs_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so\n'}
+[0.797131] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/lib/libstack_msgs__rosidl_generator_py.so\n'}
+[0.797402] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/msg/NetworkHealth.idl\n'}
+[0.797988] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/msg/SystemMetrics.idl\n'}
+[0.798654] (-) TimerEvent: {}
+[0.798698] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/msg/NetworkHealth.msg\n'}
+[0.798829] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/msg/SystemMetrics.msg\n'}
+[0.798950] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/share/ament_index/resource_index/package_run_dependencies/stack_msgs\n'}
+[0.799166] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/share/ament_index/resource_index/parent_prefix_path/stack_msgs\n'}
+[0.799442] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/environment/ament_prefix_path.sh\n'}
+[0.799723] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/environment/ament_prefix_path.dsv\n'}
+[0.800057] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/environment/path.sh\n'}
+[0.800417] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/environment/path.dsv\n'}
+[0.800699] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/local_setup.bash\n'}
+[0.800983] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/local_setup.sh\n'}
+[0.801254] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/local_setup.zsh\n'}
+[0.802180] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/local_setup.dsv\n'}
+[0.802307] (stack_msgs) StdoutLine: {'line': b'-- Installing: /ws/install/stack_msgs/share/stack_msgs/package.dsv\n'}
+[0.802426] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/share/ament_index/resource_index/packages/stack_msgs\n'}
+[0.802542] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/cmake/export_stack_msgs__rosidl_generator_cExport.cmake\n'}
+[0.802693] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/cmake/export_stack_msgs__rosidl_generator_cExport-release.cmake\n'}
+[0.802812] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/cmake/export_stack_msgs__rosidl_typesupport_fastrtps_cExport.cmake\n'}
+[0.802927] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/cmake/export_stack_msgs__rosidl_typesupport_fastrtps_cExport-release.cmake\n'}
+[0.803043] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/cmake/stack_msgs__rosidl_typesupport_introspection_cExport.cmake\n'}
+[0.803160] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/cmake/stack_msgs__rosidl_typesupport_introspection_cExport-release.cmake\n'}
+[0.803276] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/cmake/stack_msgs__rosidl_typesupport_cExport.cmake\n'}
+[0.803390] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/cmake/stack_msgs__rosidl_typesupport_cExport-release.cmake\n'}
+[0.803503] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/cmake/export_stack_msgs__rosidl_generator_cppExport.cmake\n'}
+[0.803615] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/cmake/export_stack_msgs__rosidl_typesupport_fastrtps_cppExport.cmake\n'}
+[0.803730] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/cmake/export_stack_msgs__rosidl_typesupport_fastrtps_cppExport-release.cmake\n'}
+[0.803868] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/cmake/stack_msgs__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[0.803998] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/cmake/stack_msgs__rosidl_typesupport_introspection_cppExport-release.cmake\n'}
+[0.804131] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/cmake/stack_msgs__rosidl_typesupport_cppExport.cmake\n'}
+[0.804246] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/cmake/stack_msgs__rosidl_typesupport_cppExport-release.cmake\n'}
+[0.804359] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/cmake/export_stack_msgs__rosidl_generator_pyExport.cmake\n'}
+[0.804471] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/cmake/export_stack_msgs__rosidl_generator_pyExport-release.cmake\n'}
+[0.804585] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/cmake/rosidl_cmake-extras.cmake\n'}
+[0.804694] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[0.804802] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[0.805118] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[0.805668] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[0.806938] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[0.807366] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[0.807783] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/cmake/stack_msgsConfig.cmake\n'}
+[0.808534] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/cmake/stack_msgsConfig-version.cmake\n'}
+[0.809028] (stack_msgs) StdoutLine: {'line': b'-- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/package.xml\n'}
+[0.809442] (stack_msgs) CommandEnded: {'returncode': 0}
+[0.881055] (stack_msgs) JobEnded: {'identifier': 'stack_msgs', 'rc': 0}
+[0.883315] (bandwidth_manager) JobStarted: {'identifier': 'bandwidth_manager'}
+[0.894399] (health_monitor) JobStarted: {'identifier': 'health_monitor'}
+[0.898875] (-) TimerEvent: {}
+[0.999200] (-) TimerEvent: {}
+[1.099566] (-) TimerEvent: {}
+[1.199947] (-) TimerEvent: {}
+[1.300289] (-) TimerEvent: {}
+[1.400636] (-) TimerEvent: {}
+[1.500995] (-) TimerEvent: {}
+[1.601334] (-) TimerEvent: {}
+[1.701674] (-) TimerEvent: {}
+[1.802047] (-) TimerEvent: {}
+[1.902438] (-) TimerEvent: {}
+[2.002793] (-) TimerEvent: {}
+[2.103143] (-) TimerEvent: {}
+[2.203473] (-) TimerEvent: {}
+[2.303989] (-) TimerEvent: {}
+[2.404371] (-) TimerEvent: {}
+[2.446900] (bandwidth_manager) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/bandwidth_manager', 'build', '--build-base', '/ws/build/bandwidth_manager/build', 'install', '--record', '/ws/build/bandwidth_manager/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/ws/src/bandwidth_manager', 'env': {'HOSTNAME': 'RedJetson', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/ws/install/stack_msgs/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/usr/local/cuda/lib64', 'HOME': '/root', 'OLDPWD': '/ws', 'ROS_PYTHON_VERSION': '3', 'LC_CTYPE': 'C.UTF-8', 'ROS_DISTRO': 'humble', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'NVIDIA_DRIVER_CAPABILITIES': 'all', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/opt/ros/humble/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'FASTRTPS_DEFAULT_PROFILES_FILE': '/ws/fastdds/jetson_fastdds.xml', 'RMW_IMPLEMENTATION': 'rmw_fastrtps_cpp', 'ROS_DOMAIN_ID': '42', 'AMENT_PREFIX_PATH': '/ws/install/stack_msgs:/opt/ros/humble', 'DEBIAN_FRONTEND': 'noninteractive', 'PWD': '/ws/build/bandwidth_manager', 'CUDA_HOME': '/usr/local/cuda', 'PYTHONPATH': '/ws/build/bandwidth_manager/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/ws/install/bandwidth_manager/lib/python3.10/site-packages:/ws/install/stack_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'NVIDIA_VISIBLE_DEVICES': 'all', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/ws/install/stack_msgs'}, 'shell': False}
+[2.451838] (health_monitor) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/health_monitor', 'build', '--build-base', '/ws/build/health_monitor/build', 'install', '--record', '/ws/build/health_monitor/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/ws/src/health_monitor', 'env': {'HOSTNAME': 'RedJetson', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/ws/install/stack_msgs/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/usr/local/cuda/lib64', 'HOME': '/root', 'OLDPWD': '/ws', 'ROS_PYTHON_VERSION': '3', 'LC_CTYPE': 'C.UTF-8', 'ROS_DISTRO': 'humble', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'NVIDIA_DRIVER_CAPABILITIES': 'all', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/opt/ros/humble/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'FASTRTPS_DEFAULT_PROFILES_FILE': '/ws/fastdds/jetson_fastdds.xml', 'RMW_IMPLEMENTATION': 'rmw_fastrtps_cpp', 'ROS_DOMAIN_ID': '42', 'AMENT_PREFIX_PATH': '/ws/install/stack_msgs:/opt/ros/humble', 'DEBIAN_FRONTEND': 'noninteractive', 'PWD': '/ws/build/health_monitor', 'CUDA_HOME': '/usr/local/cuda', 'PYTHONPATH': '/ws/build/health_monitor/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/ws/install/health_monitor/lib/python3.10/site-packages:/ws/install/stack_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'NVIDIA_VISIBLE_DEVICES': 'all', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/ws/install/stack_msgs'}, 'shell': False}
+[2.504513] (-) TimerEvent: {}
+[2.604857] (-) TimerEvent: {}
+[2.705163] (-) TimerEvent: {}
+[2.805510] (-) TimerEvent: {}
+[2.837940] (health_monitor) StdoutLine: {'line': b'running egg_info\n'}
+[2.838411] (bandwidth_manager) StdoutLine: {'line': b'running egg_info\n'}
+[2.839286] (bandwidth_manager) StdoutLine: {'line': b'writing ../../build/bandwidth_manager/bandwidth_manager.egg-info/PKG-INFO\n'}
+[2.839718] (health_monitor) StdoutLine: {'line': b'writing ../../build/health_monitor/health_monitor.egg-info/PKG-INFO\n'}
+[2.840364] (bandwidth_manager) StdoutLine: {'line': b'writing dependency_links to ../../build/bandwidth_manager/bandwidth_manager.egg-info/dependency_links.txt\n'}
+[2.840646] (bandwidth_manager) StdoutLine: {'line': b'writing entry points to ../../build/bandwidth_manager/bandwidth_manager.egg-info/entry_points.txt\n'}
+[2.840801] (health_monitor) StdoutLine: {'line': b'writing dependency_links to ../../build/health_monitor/health_monitor.egg-info/dependency_links.txt\n'}
+[2.841262] (bandwidth_manager) StdoutLine: {'line': b'writing requirements to ../../build/bandwidth_manager/bandwidth_manager.egg-info/requires.txt\n'}
+[2.841461] (bandwidth_manager) StdoutLine: {'line': b'writing top-level names to ../../build/bandwidth_manager/bandwidth_manager.egg-info/top_level.txt\n'}
+[2.841594] (health_monitor) StdoutLine: {'line': b'writing entry points to ../../build/health_monitor/health_monitor.egg-info/entry_points.txt\n'}
+[2.841725] (health_monitor) StdoutLine: {'line': b'writing requirements to ../../build/health_monitor/health_monitor.egg-info/requires.txt\n'}
+[2.842262] (health_monitor) StdoutLine: {'line': b'writing top-level names to ../../build/health_monitor/health_monitor.egg-info/top_level.txt\n'}
+[2.844574] (bandwidth_manager) StdoutLine: {'line': b"reading manifest file '../../build/bandwidth_manager/bandwidth_manager.egg-info/SOURCES.txt'\n"}
+[2.845053] (bandwidth_manager) StdoutLine: {'line': b"adding license file 'LICENSE'\n"}
+[2.845484] (health_monitor) StdoutLine: {'line': b"reading manifest file '../../build/health_monitor/health_monitor.egg-info/SOURCES.txt'\n"}
+[2.846048] (health_monitor) StdoutLine: {'line': b"adding license file 'LICENSE'\n"}
+[2.846337] (bandwidth_manager) StdoutLine: {'line': b"writing manifest file '../../build/bandwidth_manager/bandwidth_manager.egg-info/SOURCES.txt'\n"}
+[2.846696] (bandwidth_manager) StdoutLine: {'line': b'running build\n'}
+[2.846834] (bandwidth_manager) StdoutLine: {'line': b'running build_py\n'}
+[2.847177] (health_monitor) StdoutLine: {'line': b"writing manifest file '../../build/health_monitor/health_monitor.egg-info/SOURCES.txt'\n"}
+[2.847489] (health_monitor) StdoutLine: {'line': b'running build\n'}
+[2.847627] (health_monitor) StdoutLine: {'line': b'running build_py\n'}
+[2.847955] (bandwidth_manager) StdoutLine: {'line': b'running install\n'}
+[2.848743] (bandwidth_manager) StdoutLine: {'line': b'running install_lib\n'}
+[2.848876] (health_monitor) StdoutLine: {'line': b'running install\n'}
+[2.849396] (health_monitor) StdoutLine: {'line': b'running install_lib\n'}
+[2.851381] (bandwidth_manager) StdoutLine: {'line': b'running install_data\n'}
+[2.851672] (bandwidth_manager) StdoutLine: {'line': b'running install_egg_info\n'}
+[2.852098] (health_monitor) StdoutLine: {'line': b'running install_data\n'}
+[2.852371] (health_monitor) StdoutLine: {'line': b'running install_egg_info\n'}
+[2.855332] (bandwidth_manager) StdoutLine: {'line': b"removing '/ws/install/bandwidth_manager/lib/python3.10/site-packages/bandwidth_manager-0.1.0-py3.10.egg-info' (and everything under it)\n"}
+[2.856007] (health_monitor) StdoutLine: {'line': b"removing '/ws/install/health_monitor/lib/python3.10/site-packages/health_monitor-0.1.0-py3.10.egg-info' (and everything under it)\n"}
+[2.856255] (bandwidth_manager) StdoutLine: {'line': b'Copying ../../build/bandwidth_manager/bandwidth_manager.egg-info to /ws/install/bandwidth_manager/lib/python3.10/site-packages/bandwidth_manager-0.1.0-py3.10.egg-info\n'}
+[2.856711] (health_monitor) StdoutLine: {'line': b'Copying ../../build/health_monitor/health_monitor.egg-info to /ws/install/health_monitor/lib/python3.10/site-packages/health_monitor-0.1.0-py3.10.egg-info\n'}
+[2.858100] (bandwidth_manager) StdoutLine: {'line': b'running install_scripts\n'}
+[2.858635] (health_monitor) StdoutLine: {'line': b'running install_scripts\n'}
+[2.902396] (bandwidth_manager) StdoutLine: {'line': b'Installing bandwidth_manager script to /ws/install/bandwidth_manager/lib/bandwidth_manager\n'}
+[2.902939] (health_monitor) StdoutLine: {'line': b'Installing network_monitor script to /ws/install/health_monitor/lib/health_monitor\n'}
+[2.903295] (health_monitor) StdoutLine: {'line': b'Installing system_metrics script to /ws/install/health_monitor/lib/health_monitor\n'}
+[2.903456] (health_monitor) StdoutLine: {'line': b'Installing watchdog script to /ws/install/health_monitor/lib/health_monitor\n'}
+[2.903928] (bandwidth_manager) StdoutLine: {'line': b"writing list of installed files to '/ws/build/bandwidth_manager/install.log'\n"}
+[2.904106] (health_monitor) StdoutLine: {'line': b"writing list of installed files to '/ws/build/health_monitor/install.log'\n"}
+[2.905668] (-) TimerEvent: {}
+[2.972996] (bandwidth_manager) CommandEnded: {'returncode': 0}
+[2.997723] (bandwidth_manager) JobEnded: {'identifier': 'bandwidth_manager', 'rc': 0}
+[3.000042] (health_monitor) CommandEnded: {'returncode': 0}
+[3.005874] (-) TimerEvent: {}
+[3.021281] (health_monitor) JobEnded: {'identifier': 'health_monitor', 'rc': 0}
+[3.023062] (-) EventReactorShutdown: {}

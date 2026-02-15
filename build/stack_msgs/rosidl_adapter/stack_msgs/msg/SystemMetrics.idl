@@ -1,0 +1,60 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from stack_msgs/msg/SystemMetrics.msg
+// generated code does not contain a copyright notice
+
+#include "std_msgs/msg/Header.idl"
+
+module stack_msgs {
+  module msg {
+    @verbatim (language="comment", text=
+      "System resource metrics for Jetson Orin Nano")
+    struct SystemMetrics {
+      std_msgs::msg::Header header;
+
+      @verbatim (language="comment", text=
+        "CPU metrics" "\n"
+        "Overall CPU usage (0-100)")
+      float cpu_percent;
+
+      @verbatim (language="comment", text=
+        "CPU temperature")
+      float cpu_temp_celsius;
+
+      @verbatim (language="comment", text=
+        "GPU metrics (Jetson-specific)" "\n"
+        "GPU usage (0-100)")
+      float gpu_percent;
+
+      @verbatim (language="comment", text=
+        "GPU temperature")
+      float gpu_temp_celsius;
+
+      @verbatim (language="comment", text=
+        "Current GPU frequency")
+      uint32 gpu_freq_mhz;
+
+      @verbatim (language="comment", text=
+        "Memory metrics (MB)")
+      uint32 ram_used_mb;
+
+      uint32 ram_total_mb;
+
+      @verbatim (language="comment", text=
+        "0-100")
+      float ram_percent;
+
+      @verbatim (language="comment", text=
+        "Thermal throttling status")
+      boolean is_throttled;
+
+      @verbatim (language="comment", text=
+        "Power metrics (milliwatts)")
+      uint32 power_draw_mw;
+
+      @verbatim (language="comment", text=
+        "System health flag" "\n"
+        "False if any critical threshold exceeded")
+      boolean system_healthy;
+    };
+  };
+};

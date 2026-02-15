@@ -1,0 +1,43 @@
+[1.513s] Invoking command in '/ws/src/bandwidth_manager': AMENT_PREFIX_PATH=/ws/install/stack_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/ws/install/stack_msgs LD_LIBRARY_PATH=/ws/install/stack_msgs/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/usr/local/cuda/lib64 PYTHONPATH=/ws/build/bandwidth_manager/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/ws/install/bandwidth_manager/lib/python3.10/site-packages:/ws/install/stack_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/bandwidth_manager build --build-base /ws/build/bandwidth_manager/build install --record /ws/build/bandwidth_manager/install.log --single-version-externally-managed install_data
+[1.913s] running egg_info
+[1.915s] creating ../../build/bandwidth_manager/bandwidth_manager.egg-info
+[1.916s] writing ../../build/bandwidth_manager/bandwidth_manager.egg-info/PKG-INFO
+[1.917s] writing dependency_links to ../../build/bandwidth_manager/bandwidth_manager.egg-info/dependency_links.txt
+[1.917s] writing entry points to ../../build/bandwidth_manager/bandwidth_manager.egg-info/entry_points.txt
+[1.918s] writing requirements to ../../build/bandwidth_manager/bandwidth_manager.egg-info/requires.txt
+[1.918s] writing top-level names to ../../build/bandwidth_manager/bandwidth_manager.egg-info/top_level.txt
+[1.918s] writing manifest file '../../build/bandwidth_manager/bandwidth_manager.egg-info/SOURCES.txt'
+[1.921s] reading manifest file '../../build/bandwidth_manager/bandwidth_manager.egg-info/SOURCES.txt'
+[1.921s] adding license file 'LICENSE'
+[1.922s] writing manifest file '../../build/bandwidth_manager/bandwidth_manager.egg-info/SOURCES.txt'
+[1.923s] running build
+[1.923s] running build_py
+[1.923s] creating /ws/build/bandwidth_manager/build
+[1.924s] creating /ws/build/bandwidth_manager/build/lib
+[1.924s] creating /ws/build/bandwidth_manager/build/lib/bandwidth_manager
+[1.924s] copying bandwidth_manager/qos_controller.py -> /ws/build/bandwidth_manager/build/lib/bandwidth_manager
+[1.924s] copying bandwidth_manager/__init__.py -> /ws/build/bandwidth_manager/build/lib/bandwidth_manager
+[1.924s] copying bandwidth_manager/bandwidth_manager_node.py -> /ws/build/bandwidth_manager/build/lib/bandwidth_manager
+[1.924s] running install
+[1.925s] running install_lib
+[1.927s] creating /ws/install/bandwidth_manager/lib/python3.10/site-packages/bandwidth_manager
+[1.927s] copying /ws/build/bandwidth_manager/build/lib/bandwidth_manager/qos_controller.py -> /ws/install/bandwidth_manager/lib/python3.10/site-packages/bandwidth_manager
+[1.927s] copying /ws/build/bandwidth_manager/build/lib/bandwidth_manager/__init__.py -> /ws/install/bandwidth_manager/lib/python3.10/site-packages/bandwidth_manager
+[1.928s] copying /ws/build/bandwidth_manager/build/lib/bandwidth_manager/bandwidth_manager_node.py -> /ws/install/bandwidth_manager/lib/python3.10/site-packages/bandwidth_manager
+[1.929s] byte-compiling /ws/install/bandwidth_manager/lib/python3.10/site-packages/bandwidth_manager/qos_controller.py to qos_controller.cpython-310.pyc
+[1.929s] byte-compiling /ws/install/bandwidth_manager/lib/python3.10/site-packages/bandwidth_manager/__init__.py to __init__.cpython-310.pyc
+[1.930s] byte-compiling /ws/install/bandwidth_manager/lib/python3.10/site-packages/bandwidth_manager/bandwidth_manager_node.py to bandwidth_manager_node.cpython-310.pyc
+[1.933s] running install_data
+[1.934s] creating /ws/install/bandwidth_manager/share/ament_index
+[1.934s] creating /ws/install/bandwidth_manager/share/ament_index/resource_index
+[1.934s] creating /ws/install/bandwidth_manager/share/ament_index/resource_index/packages
+[1.934s] copying resource/bandwidth_manager -> /ws/install/bandwidth_manager/share/ament_index/resource_index/packages
+[1.935s] copying package.xml -> /ws/install/bandwidth_manager/share/bandwidth_manager
+[1.935s] creating /ws/install/bandwidth_manager/share/bandwidth_manager/config
+[1.935s] copying config/bandwidth_config.yaml -> /ws/install/bandwidth_manager/share/bandwidth_manager/config
+[1.935s] running install_egg_info
+[1.939s] Copying ../../build/bandwidth_manager/bandwidth_manager.egg-info to /ws/install/bandwidth_manager/lib/python3.10/site-packages/bandwidth_manager-0.1.0-py3.10.egg-info
+[1.941s] running install_scripts
+[1.986s] Installing bandwidth_manager script to /ws/install/bandwidth_manager/lib/bandwidth_manager
+[1.987s] writing list of installed files to '/ws/build/bandwidth_manager/install.log'
+[2.061s] Invoked command in '/ws/src/bandwidth_manager' returned '0': AMENT_PREFIX_PATH=/ws/install/stack_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/ws/install/stack_msgs LD_LIBRARY_PATH=/ws/install/stack_msgs/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/usr/local/cuda/lib64 PYTHONPATH=/ws/build/bandwidth_manager/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/ws/install/bandwidth_manager/lib/python3.10/site-packages:/ws/install/stack_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/bandwidth_manager build --build-base /ws/build/bandwidth_manager/build install --record /ws/build/bandwidth_manager/install.log --single-version-externally-managed install_data

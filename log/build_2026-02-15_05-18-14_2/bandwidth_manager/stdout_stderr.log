@@ -1,0 +1,41 @@
+running egg_info
+creating ../../build/bandwidth_manager/bandwidth_manager.egg-info
+writing ../../build/bandwidth_manager/bandwidth_manager.egg-info/PKG-INFO
+writing dependency_links to ../../build/bandwidth_manager/bandwidth_manager.egg-info/dependency_links.txt
+writing entry points to ../../build/bandwidth_manager/bandwidth_manager.egg-info/entry_points.txt
+writing requirements to ../../build/bandwidth_manager/bandwidth_manager.egg-info/requires.txt
+writing top-level names to ../../build/bandwidth_manager/bandwidth_manager.egg-info/top_level.txt
+writing manifest file '../../build/bandwidth_manager/bandwidth_manager.egg-info/SOURCES.txt'
+reading manifest file '../../build/bandwidth_manager/bandwidth_manager.egg-info/SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file '../../build/bandwidth_manager/bandwidth_manager.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /ws/build/bandwidth_manager/build
+creating /ws/build/bandwidth_manager/build/lib
+creating /ws/build/bandwidth_manager/build/lib/bandwidth_manager
+copying bandwidth_manager/qos_controller.py -> /ws/build/bandwidth_manager/build/lib/bandwidth_manager
+copying bandwidth_manager/__init__.py -> /ws/build/bandwidth_manager/build/lib/bandwidth_manager
+copying bandwidth_manager/bandwidth_manager_node.py -> /ws/build/bandwidth_manager/build/lib/bandwidth_manager
+running install
+running install_lib
+creating /ws/install/bandwidth_manager/lib/python3.10/site-packages/bandwidth_manager
+copying /ws/build/bandwidth_manager/build/lib/bandwidth_manager/qos_controller.py -> /ws/install/bandwidth_manager/lib/python3.10/site-packages/bandwidth_manager
+copying /ws/build/bandwidth_manager/build/lib/bandwidth_manager/__init__.py -> /ws/install/bandwidth_manager/lib/python3.10/site-packages/bandwidth_manager
+copying /ws/build/bandwidth_manager/build/lib/bandwidth_manager/bandwidth_manager_node.py -> /ws/install/bandwidth_manager/lib/python3.10/site-packages/bandwidth_manager
+byte-compiling /ws/install/bandwidth_manager/lib/python3.10/site-packages/bandwidth_manager/qos_controller.py to qos_controller.cpython-310.pyc
+byte-compiling /ws/install/bandwidth_manager/lib/python3.10/site-packages/bandwidth_manager/__init__.py to __init__.cpython-310.pyc
+byte-compiling /ws/install/bandwidth_manager/lib/python3.10/site-packages/bandwidth_manager/bandwidth_manager_node.py to bandwidth_manager_node.cpython-310.pyc
+running install_data
+creating /ws/install/bandwidth_manager/share/ament_index
+creating /ws/install/bandwidth_manager/share/ament_index/resource_index
+creating /ws/install/bandwidth_manager/share/ament_index/resource_index/packages
+copying resource/bandwidth_manager -> /ws/install/bandwidth_manager/share/ament_index/resource_index/packages
+copying package.xml -> /ws/install/bandwidth_manager/share/bandwidth_manager
+creating /ws/install/bandwidth_manager/share/bandwidth_manager/config
+copying config/bandwidth_config.yaml -> /ws/install/bandwidth_manager/share/bandwidth_manager/config
+running install_egg_info
+Copying ../../build/bandwidth_manager/bandwidth_manager.egg-info to /ws/install/bandwidth_manager/lib/python3.10/site-packages/bandwidth_manager-0.1.0-py3.10.egg-info
+running install_scripts
+Installing bandwidth_manager script to /ws/install/bandwidth_manager/lib/bandwidth_manager
+writing list of installed files to '/ws/build/bandwidth_manager/install.log'

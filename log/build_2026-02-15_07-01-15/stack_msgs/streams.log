@@ -1,0 +1,164 @@
+[0.021s] Invoking command in '/ws/build/stack_msgs': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /ws/build/stack_msgs -- -j6 -l6
+[0.124s] [  2%] Built target stack_msgs__cpp
+[0.126s] [ 12%] Built target stack_msgs__rosidl_generator_c
+[0.147s] [ 12%] Built target ament_cmake_python_copy_stack_msgs
+[0.172s] [ 30%] Built target stack_msgs__rosidl_typesupport_fastrtps_cpp
+[0.172s] [ 33%] Built target stack_msgs__rosidl_typesupport_introspection_cpp
+[0.178s] [ 43%] Built target stack_msgs__rosidl_typesupport_cpp
+[0.182s] [ 53%] Built target stack_msgs__rosidl_typesupport_introspection_c
+[0.188s] [ 64%] Built target stack_msgs__rosidl_typesupport_fastrtps_c
+[0.190s] [ 74%] Built target stack_msgs__rosidl_typesupport_c
+[0.234s] [ 74%] Built target stack_msgs
+[0.276s] [ 76%] Built target stack_msgs__py
+[0.321s] [ 84%] Built target stack_msgs__rosidl_generator_py
+[0.369s] [ 94%] Built target stack_msgs__rosidl_typesupport_introspection_c__pyext
+[0.370s] [ 94%] Built target stack_msgs__rosidl_typesupport_fastrtps_c__pyext
+[0.372s] [100%] Built target stack_msgs__rosidl_typesupport_c__pyext
+[0.569s] running egg_info
+[0.570s] writing stack_msgs.egg-info/PKG-INFO
+[0.571s] writing dependency_links to stack_msgs.egg-info/dependency_links.txt
+[0.571s] writing top-level names to stack_msgs.egg-info/top_level.txt
+[0.576s] reading manifest file 'stack_msgs.egg-info/SOURCES.txt'
+[0.577s] writing manifest file 'stack_msgs.egg-info/SOURCES.txt'
+[0.645s] [100%] Built target ament_cmake_python_build_stack_msgs_egg
+[0.671s] Invoked command in '/ws/build/stack_msgs' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /ws/build/stack_msgs -- -j6 -l6
+[0.692s] Invoking command in '/ws/build/stack_msgs': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /ws/build/stack_msgs
+[0.715s] -- Install configuration: "Release"
+[0.716s] -- Up-to-date: /ws/install/stack_msgs/share/ament_index/resource_index/rosidl_interfaces/stack_msgs
+[0.717s] -- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs
+[0.717s] -- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg
+[0.718s] -- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/detail
+[0.719s] -- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/detail/network_health__struct.h
+[0.720s] -- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/detail/system_metrics__functions.c
+[0.721s] -- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/detail/system_metrics__functions.h
+[0.721s] -- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/detail/network_health__functions.h
+[0.722s] -- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/detail/network_health__type_support.h
+[0.723s] -- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/detail/system_metrics__type_support.h
+[0.723s] -- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/detail/network_health__functions.c
+[0.724s] -- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/detail/system_metrics__struct.h
+[0.724s] -- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/network_health.h
+[0.724s] -- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/system_metrics.h
+[0.724s] -- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/rosidl_generator_c__visibility_control.h
+[0.724s] -- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/environment/library_path.sh
+[0.724s] -- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/environment/library_path.dsv
+[0.725s] -- Up-to-date: /ws/install/stack_msgs/lib/libstack_msgs__rosidl_generator_c.so
+[0.725s] -- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs
+[0.725s] -- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg
+[0.725s] -- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/detail
+[0.725s] -- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/detail/system_metrics__rosidl_typesupport_fastrtps_c.h
+[0.725s] -- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/detail/network_health__rosidl_typesupport_fastrtps_c.h
+[0.726s] -- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[0.726s] -- Up-to-date: /ws/install/stack_msgs/lib/libstack_msgs__rosidl_typesupport_fastrtps_c.so
+[0.726s] -- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs
+[0.726s] -- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg
+[0.726s] -- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/detail
+[0.726s] -- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/detail/network_health__type_support.c
+[0.726s] -- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/detail/system_metrics__type_support.c
+[0.727s] -- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/detail/system_metrics__rosidl_typesupport_introspection_c.h
+[0.727s] -- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/detail/network_health__rosidl_typesupport_introspection_c.h
+[0.727s] -- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[0.727s] -- Up-to-date: /ws/install/stack_msgs/lib/libstack_msgs__rosidl_typesupport_introspection_c.so
+[0.727s] -- Up-to-date: /ws/install/stack_msgs/lib/libstack_msgs__rosidl_typesupport_c.so
+[0.727s] -- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs
+[0.727s] -- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg
+[0.728s] -- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/rosidl_generator_cpp__visibility_control.hpp
+[0.728s] -- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/detail
+[0.728s] -- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/detail/system_metrics__builder.hpp
+[0.728s] -- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/detail/network_health__type_support.hpp
+[0.728s] -- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/detail/network_health__struct.hpp
+[0.728s] -- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/detail/network_health__traits.hpp
+[0.728s] -- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/detail/system_metrics__struct.hpp
+[0.728s] -- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/detail/system_metrics__type_support.hpp
+[0.729s] -- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/detail/network_health__builder.hpp
+[0.729s] -- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/detail/system_metrics__traits.hpp
+[0.729s] -- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/system_metrics.hpp
+[0.729s] -- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/network_health.hpp
+[0.729s] -- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs
+[0.729s] -- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg
+[0.729s] -- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[0.730s] -- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/detail
+[0.730s] -- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/detail/dds_fastrtps
+[0.730s] -- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/detail/network_health__rosidl_typesupport_fastrtps_cpp.hpp
+[0.730s] -- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/detail/system_metrics__rosidl_typesupport_fastrtps_cpp.hpp
+[0.730s] -- Up-to-date: /ws/install/stack_msgs/lib/libstack_msgs__rosidl_typesupport_fastrtps_cpp.so
+[0.730s] -- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs
+[0.730s] -- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg
+[0.730s] -- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/detail
+[0.731s] -- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/detail/network_health__type_support.cpp
+[0.731s] -- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/detail/system_metrics__rosidl_typesupport_introspection_cpp.hpp
+[0.731s] -- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/detail/system_metrics__type_support.cpp
+[0.731s] -- Up-to-date: /ws/install/stack_msgs/include/stack_msgs/stack_msgs/msg/detail/network_health__rosidl_typesupport_introspection_cpp.hpp
+[0.731s] -- Up-to-date: /ws/install/stack_msgs/lib/libstack_msgs__rosidl_typesupport_introspection_cpp.so
+[0.731s] -- Up-to-date: /ws/install/stack_msgs/lib/libstack_msgs__rosidl_typesupport_cpp.so
+[0.731s] -- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/environment/pythonpath.sh
+[0.732s] -- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/environment/pythonpath.dsv
+[0.732s] -- Up-to-date: /ws/install/stack_msgs/local/lib/python3.10/dist-packages/stack_msgs-0.0.1-py3.10.egg-info
+[0.732s] -- Installing: /ws/install/stack_msgs/local/lib/python3.10/dist-packages/stack_msgs-0.0.1-py3.10.egg-info/PKG-INFO
+[0.732s] -- Installing: /ws/install/stack_msgs/local/lib/python3.10/dist-packages/stack_msgs-0.0.1-py3.10.egg-info/top_level.txt
+[0.732s] -- Installing: /ws/install/stack_msgs/local/lib/python3.10/dist-packages/stack_msgs-0.0.1-py3.10.egg-info/dependency_links.txt
+[0.732s] -- Installing: /ws/install/stack_msgs/local/lib/python3.10/dist-packages/stack_msgs-0.0.1-py3.10.egg-info/SOURCES.txt
+[0.732s] -- Up-to-date: /ws/install/stack_msgs/local/lib/python3.10/dist-packages/stack_msgs
+[0.732s] -- Up-to-date: /ws/install/stack_msgs/local/lib/python3.10/dist-packages/stack_msgs/_stack_msgs_s.ep.rosidl_typesupport_c.c
+[0.733s] -- Up-to-date: /ws/install/stack_msgs/local/lib/python3.10/dist-packages/stack_msgs/_stack_msgs_s.ep.rosidl_typesupport_fastrtps_c.c
+[0.733s] -- Up-to-date: /ws/install/stack_msgs/local/lib/python3.10/dist-packages/stack_msgs/msg
+[0.733s] -- Up-to-date: /ws/install/stack_msgs/local/lib/python3.10/dist-packages/stack_msgs/msg/_system_metrics_s.c
+[0.733s] -- Up-to-date: /ws/install/stack_msgs/local/lib/python3.10/dist-packages/stack_msgs/msg/_network_health.py
+[0.733s] -- Up-to-date: /ws/install/stack_msgs/local/lib/python3.10/dist-packages/stack_msgs/msg/_network_health_s.c
+[0.733s] -- Up-to-date: /ws/install/stack_msgs/local/lib/python3.10/dist-packages/stack_msgs/msg/_system_metrics.py
+[0.733s] -- Up-to-date: /ws/install/stack_msgs/local/lib/python3.10/dist-packages/stack_msgs/msg/__init__.py
+[0.733s] -- Up-to-date: /ws/install/stack_msgs/local/lib/python3.10/dist-packages/stack_msgs/stack_msgs_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so
+[0.734s] -- Up-to-date: /ws/install/stack_msgs/local/lib/python3.10/dist-packages/stack_msgs/stack_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so
+[0.734s] -- Up-to-date: /ws/install/stack_msgs/local/lib/python3.10/dist-packages/stack_msgs/stack_msgs_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so
+[0.734s] -- Up-to-date: /ws/install/stack_msgs/local/lib/python3.10/dist-packages/stack_msgs/_stack_msgs_s.ep.rosidl_typesupport_introspection_c.c
+[0.734s] -- Up-to-date: /ws/install/stack_msgs/local/lib/python3.10/dist-packages/stack_msgs/__init__.py
+[0.734s] -- Up-to-date: /ws/install/stack_msgs/local/lib/python3.10/dist-packages/stack_msgs/libstack_msgs__rosidl_generator_py.so
+[0.789s] Listing '/ws/install/stack_msgs/local/lib/python3.10/dist-packages/stack_msgs'...
+[0.789s] Listing '/ws/install/stack_msgs/local/lib/python3.10/dist-packages/stack_msgs/msg'...
+[0.799s] -- Up-to-date: /ws/install/stack_msgs/local/lib/python3.10/dist-packages/stack_msgs/stack_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so
+[0.799s] -- Up-to-date: /ws/install/stack_msgs/local/lib/python3.10/dist-packages/stack_msgs/stack_msgs_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so
+[0.800s] -- Up-to-date: /ws/install/stack_msgs/local/lib/python3.10/dist-packages/stack_msgs/stack_msgs_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so
+[0.800s] -- Up-to-date: /ws/install/stack_msgs/lib/libstack_msgs__rosidl_generator_py.so
+[0.803s] -- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/msg/NetworkHealth.idl
+[0.804s] -- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/msg/SystemMetrics.idl
+[0.804s] -- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/msg/NetworkHealth.msg
+[0.805s] -- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/msg/SystemMetrics.msg
+[0.805s] -- Up-to-date: /ws/install/stack_msgs/share/ament_index/resource_index/package_run_dependencies/stack_msgs
+[0.805s] -- Up-to-date: /ws/install/stack_msgs/share/ament_index/resource_index/parent_prefix_path/stack_msgs
+[0.805s] -- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/environment/ament_prefix_path.sh
+[0.806s] -- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/environment/ament_prefix_path.dsv
+[0.806s] -- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/environment/path.sh
+[0.806s] -- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/environment/path.dsv
+[0.806s] -- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/local_setup.bash
+[0.806s] -- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/local_setup.sh
+[0.806s] -- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/local_setup.zsh
+[0.806s] -- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/local_setup.dsv
+[0.806s] -- Installing: /ws/install/stack_msgs/share/stack_msgs/package.dsv
+[0.807s] -- Up-to-date: /ws/install/stack_msgs/share/ament_index/resource_index/packages/stack_msgs
+[0.807s] -- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/cmake/export_stack_msgs__rosidl_generator_cExport.cmake
+[0.807s] -- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/cmake/export_stack_msgs__rosidl_generator_cExport-release.cmake
+[0.807s] -- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/cmake/export_stack_msgs__rosidl_typesupport_fastrtps_cExport.cmake
+[0.807s] -- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/cmake/export_stack_msgs__rosidl_typesupport_fastrtps_cExport-release.cmake
+[0.807s] -- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/cmake/stack_msgs__rosidl_typesupport_introspection_cExport.cmake
+[0.807s] -- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/cmake/stack_msgs__rosidl_typesupport_introspection_cExport-release.cmake
+[0.807s] -- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/cmake/stack_msgs__rosidl_typesupport_cExport.cmake
+[0.808s] -- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/cmake/stack_msgs__rosidl_typesupport_cExport-release.cmake
+[0.808s] -- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/cmake/export_stack_msgs__rosidl_generator_cppExport.cmake
+[0.808s] -- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/cmake/export_stack_msgs__rosidl_typesupport_fastrtps_cppExport.cmake
+[0.808s] -- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/cmake/export_stack_msgs__rosidl_typesupport_fastrtps_cppExport-release.cmake
+[0.809s] -- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/cmake/stack_msgs__rosidl_typesupport_introspection_cppExport.cmake
+[0.810s] -- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/cmake/stack_msgs__rosidl_typesupport_introspection_cppExport-release.cmake
+[0.811s] -- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/cmake/stack_msgs__rosidl_typesupport_cppExport.cmake
+[0.811s] -- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/cmake/stack_msgs__rosidl_typesupport_cppExport-release.cmake
+[0.812s] -- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/cmake/export_stack_msgs__rosidl_generator_pyExport.cmake
+[0.812s] -- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/cmake/export_stack_msgs__rosidl_generator_pyExport-release.cmake
+[0.813s] -- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/cmake/rosidl_cmake-extras.cmake
+[0.813s] -- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/cmake/ament_cmake_export_dependencies-extras.cmake
+[0.814s] -- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/cmake/ament_cmake_export_include_directories-extras.cmake
+[0.814s] -- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/cmake/ament_cmake_export_libraries-extras.cmake
+[0.815s] -- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/cmake/ament_cmake_export_targets-extras.cmake
+[0.815s] -- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[0.815s] -- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[0.816s] -- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/cmake/stack_msgsConfig.cmake
+[0.816s] -- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/cmake/stack_msgsConfig-version.cmake
+[0.817s] -- Up-to-date: /ws/install/stack_msgs/share/stack_msgs/package.xml
+[0.817s] Invoked command in '/ws/build/stack_msgs' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /ws/build/stack_msgs

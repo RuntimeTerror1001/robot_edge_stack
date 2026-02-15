@@ -1,7 +1,7 @@
 PROJECT_DIR := --project-directory .
 COMPOSE_DIR := docker/compose
 
-.PHONY: jetson-build jetson-up jetson-down jetson-logs laptop-build laptop-up laptop-down
+.PHONY: jetson-build jetson-up jetson-down jetson-restart jetson-logs laptop-build laptop-up laptop-down laptop-restart
 
 jetson-build:
 	docker build -t robot_edge_stack_base:humble -f docker/jetson/Dockerfile.base .
@@ -14,6 +14,9 @@ jetson-up:
 jetson-down:
 	docker compose $(PROJECT_DIR) -f $(COMPOSE_DIR)/robot.compose.yaml down
 
+jetson-restart:
+	docker compose $(PROJECT_DIR) -f $(COMPOSE_DIR)/robot.compose.yaml restart $(s)
+
 jetson-logs:
 	docker compose $(PROJECT_DIR) -f $(COMPOSE_DIR)/robot.compose.yaml logs -f $(s)
 
@@ -25,3 +28,6 @@ laptop-up:
 
 laptop-down:
 	docker compose $(PROJECT_DIR) -f $(COMPOSE_DIR)/dev.compose.yaml down
+
+laptop-restart:
+	docker compose $(PROJECT_DIR) -f $(COMPOSE_DIR)/dev.compose.yaml restart $(s)

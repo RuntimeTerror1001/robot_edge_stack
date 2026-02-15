@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: health-monitor
+Version: 0.1.0
+Summary: Network and system health monitoring for robot edge compute stack
+Home-page: UNKNOWN
+Maintainer: Your Name
+Maintainer-email: you@example.com
+License: Apache-2.0
+Platform: UNKNOWN
+Provides-Extra: test
+License-File: LICENSE
+
+UNKNOWN
+
