@@ -158,9 +158,14 @@ class BandwidthManagerNode(Node):
             return 'CRITICAL'
         
         # DEGRADED: network or compute under meaningful pressure
+
+        # Only check bandwidth if non-zero
+        bandwidth_degraded = (net.available_bandwidth > 0.0 and 
+                              net.available_bandwidth < t['bandwidth_low_mbps'])
+        
         if (net.quality_score        < t['quality_degraded']       or
             net.packet_loss_percent  > t['packet_loss_degraded']   or
-            net.available_bandwidth  < t['bandwidth_low_mbps']     or
+            bandwidth_degraded                                     or
             sys.cpu_percent          > t['cpu_high']               or
             sys.gpu_percent          > t['gpu_high']               or
             not net.is_stable):
@@ -193,6 +198,9 @@ class BandwidthManagerNode(Node):
                 reasons.append(f'quality={net.quality_score}')
             if net.packet_loss_percent > t.get(f'packet_loss_{mode.lower()}', 0.0):
                 reasons.append(f'loss={net.packet_loss_percent:.1f}%')
+            if net.available_bandwidth> 0.0 and net.available_bandwidth < t['bandwidth_low_mbps']:
+                reasons.append(f'bandwidth={net.available_bandwidth:.1f}Mbps')
+        
         if not net.is_stable:
             reasons.append('network_unstable')
         if sys.is_throttled:
