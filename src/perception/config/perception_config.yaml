@@ -1,0 +1,4 @@
+perception_node:
+  ros__parameters:
+    target_fps: 15
+    camera_topic: "/front_camera/image_raw"

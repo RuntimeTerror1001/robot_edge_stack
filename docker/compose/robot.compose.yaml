@@ -183,3 +183,28 @@ services:
         source install/setup.bash &&
         ros2 run bandwidth_manager bandwidth_manager --ros-args -p config_file:=/ws/src/bandwidth_manager/config/bandwidth_config.yaml
       "
+
+  # --------------------------------------------------------
+  # BANDWIDTH MANAGER (adaptive FPS control)
+  # --------------------------------------------------------
+  perception:
+    image: robot_edge_stack_base:humble
+    network_mode: host
+    restart: unless_stopped
+    runtime: nvidia
+    environment: 
+      - ROS_DOMAIN_ID=42
+      - RMW_IMPLEMENTATION=rmw_fastrtps_cpp
+      - FASTRTPS_DEFAULT_PROFILES_FILE=/ws/fastdds/jetson_fastdds.xml
+    volumes:
+      - ./:/ws:rw
+    depends_on:
+      - discovery
+      - camera_front
+    command: |
+      bash -lc "
+        cd /ws &&
+        colcon build --packages-select perception --cmake-args -DCMAKE_BUILD_TYPE=Release && 
+        source install/setup.bash &&
+        ros2 run perception perception_node 
+      "
