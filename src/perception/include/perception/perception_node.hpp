@@ -2,7 +2,7 @@
 #define PERCEPTION__PERCEPTION_NODE_HPP
 
 #include <rclcpp/rclcpp.hpp>
-#include <sensor_msgs/msg/Image.hpp>
+#include <sensor_msgs/msg/image.hpp>
 #include <cv_bridge/cv_bridge.h>
 #include <opencv2/opencv.hpp>
 #include <chrono>
@@ -15,6 +15,9 @@ namespace perception{
         private:
             void image_callback(const sensor_msgs::msg::Image::SharedPtr msg);
             cv::Mat process_frame(const cv::Mat & input);
+
+	    // Param Callback Handler
+	    rclcpp::node_interfaces::OnSetParametersCallbackHandle::SharedPtr param_callback_handle_;
 
             // Subscriptions
             rclcpp::Subscription<sensor_msgs::msg::Image>::SharedPtr image_sub_;

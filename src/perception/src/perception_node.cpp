@@ -4,7 +4,7 @@ namespace perception{
 
     PerceptionNode::PerceptionNode()  
     : Node("perception_node"), 
-      last_process_time(std::chrono::steady_clock::now())
+      last_process_time_(std::chrono::steady_clock::now())
     {
         // Declare parameters
         this->declare_parameter<int>("target_fps", 15);
@@ -15,11 +15,11 @@ namespace perception{
         this->get_parameter("camera_topic", camera_topic_);
 
         // Calculate preprocessing interval
-        process_interval_ms = 1000.0 / static_cast<double>(target_fps_);
+        process_interval_ms_ = 1000.0 / static_cast<double>(target_fps_);
 
         auto param_cb = [this](const std::vector<rclcpp::Parameter>& parameters){
             rcl_interfaces::msg::SetParametersResult result;
-            result.successfull = true;
+            result.successful = true;
 
             for(const auto& param : parameters){
                 if(param.get_name() == "target_fps"){
@@ -32,7 +32,7 @@ namespace perception{
 
             return result;
         };
-        this->add_on_set_parameters_callback(param_cb);
+        param_callback_handle_ = this->add_on_set_parameters_callback(param_cb);
 
         // Subscriber
         image_sub_ = this->create_subscription<sensor_msgs::msg::Image>(
@@ -55,11 +55,11 @@ namespace perception{
     void PerceptionNode::image_callback(const sensor_msgs::msg::Image::SharedPtr msg){
         // FPS Throttling
         auto now = std::chrono::steady_clock::now();
-        auto elapsed_ms = std::chrono::duration<double, std::milli>(now - last_processed_time_).count();
+        auto elapsed_ms = std::chrono::duration<double, std::milli>(now - last_process_time_).count();
 
-        if(elapsed_ms < process_interval_ms) return; // Skip frame if we're processing too fast
+        if(elapsed_ms < process_interval_ms_) return; // Skip frame if we're processing too fast
 
-        last_processed_time_ = now;
+        last_process_time_ = now;
 
         // Convert ROS image to OpenCV
         cv_bridge::CvImagePtr cv_ptr;
@@ -75,7 +75,7 @@ namespace perception{
         // Publish debug image
         sensor_msgs::msg::Image::SharedPtr debug_msg = 
             cv_bridge::CvImage(msg->header, "bgr8", processed).toImageMsg();
-        debug_pub_-publish(*debug_msg);
+        debug_pub_->publish(*debug_msg);
         
         // TODO: Run YOLO inference here
         // TODO: Publish DetectionArray

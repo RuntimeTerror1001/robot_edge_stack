@@ -190,7 +190,7 @@ services:
   perception:
     image: robot_edge_stack_base:humble
     network_mode: host
-    restart: unless_stopped
+    restart: unless-stopped
     runtime: nvidia
     environment: 
       - ROS_DOMAIN_ID=42
