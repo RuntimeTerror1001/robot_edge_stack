@@ -43,7 +43,7 @@ namespace perception{
 
         // Initialize YOLO Detector
         detector_ = std::make_unique<YOLODetector>();
-        if(!detector_->initialize(engine_path_, conf_thres_, nms_thres_)){
+        if(!detector_->initialize(engine_path_, conf_thresh_, nms_thresh_)){
             RCLCPP_ERROR(this->get_logger(), "Failed to initialize YOLO Detector");
             rclcpp::shutdown();
             return;
@@ -95,7 +95,7 @@ namespace perception{
         std::vector<Detection> detections = detector_->detect(cv_ptr->image);
 
         // Publish Detection2DArray
-        auto det_array_msg = vision_msgs::msg::Detection2DArray();
+        vision_msgs::msg::Detection2DArray det_array_msg;
         det_msg_array.header = msg->header;
 
         for(const auto& det : detections){
