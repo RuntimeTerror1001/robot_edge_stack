@@ -19,12 +19,12 @@ namespace perception{
       }
 
     TensorRTEngine::~TensorRTEngine(){
-        if(buffer_[0]) cudaFree(buffers_[0]);
-        if(buffer_[1]) cudaFree(buffers_[1]);
+        if(buffers_[0]) cudaFree(buffers_[0]);
+        if(buffers_[1]) cudaFree(buffers_[1]);
         if(stream_) cudaStreamDestroy(stream_);
-        if(context_) context_->destroy();
-        if(engine_) engine_->destroy();
-        if(runtime_) runtime_->destroy();
+        if(context_) delete context_;
+        if(engine_) delete engine_;
+        if(runtime_) delete runtime_;
     }
 
     bool TensorRTEngine::load_engine(const std::string& engine_path){
@@ -46,14 +46,14 @@ namespace perception{
         engine_ = runtime_->deserializeCudaEngine(engine_data.data(), size);
         context_ = engine_->createExecutionContext();
 
-        if(!engine || !context_) {
+        if(!engine_ || !context_) {
             std::cerr << "Failed to create engine or context" << std::endl;
             return false;
         }
 
         // Get input/output dims
-        auto input_dims = engine_->getBindingDimensions(0);
-        auto output_dims = engine_->getBindingDimensions(1);
+        auto input_dims = engine_->getTensorShape(engine_->getIOTensorName(0));
+        auto output_dims = engine_->getTensorShape(engine_->getIOTensorName(1));
 
         input_size_ = 1;
         for(int i = 0; i < input_dims.nbDims; ++i)
@@ -87,11 +87,13 @@ namespace perception{
                         cudaMemcpyHostToDevice, stream_);
 
         // Run inference
-        context_->enqueueV2(buffers_, stream_, nullptr);
+        context_->setTensorAddress(engine_->getIOTensorName(0), buffers_[0]);
+        context_->setTensorAddress(engine_->getIOTensorName(1), buffers_[1]);
+        context_->enqueueV3(stream_);
 
         // Copy output back to CPU
-        cudaMemcpyAsync(output.data, buffers_[1], output_size_ * sizeof(float),
-                        cudaMemcpyHostToDevice, stream_);
+        cudaMemcpyAsync(output.data(), buffers_[1], output_size_ * sizeof(float),
+                        cudaMemcpyDeviceToHost, stream_);
 
         cudaStreamSynchronize(stream_);
 

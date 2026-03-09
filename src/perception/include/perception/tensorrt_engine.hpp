@@ -28,7 +28,7 @@ namespace perception{
             Logger logger_;
             nvinfer1::IRuntime* runtime_;
             nvinfer1::ICudaEngine* engine_;
-            nvinfer1::IExecutionContect* context_;
+            nvinfer1::IExecutionContext* context_;
 
             void* buffers_[2]; // input and output
             size_t input_size_;
