@@ -6,13 +6,13 @@ namespace perception{
     YOLODetector::YOLODetector()
     : input_width_(640),
       input_height_(480),
-      conf_thres_(0.25),
+      conf_thresh_(0.25),
       nms_thresh_(0.45)
     {}
 
     bool YOLODetector::initialize(const std::string& engine_path, float conf_thresh, float nms_thresh){
-        conf_thres_ = conf_thresh;
-        nms_thres_ = nms_thresh;
+        conf_thresh_ = conf_thresh;
+        nms_thresh_ = nms_thresh;
 
         engine_ = std::make_unique<TensorRTEngine>();
         if(!engine_->load_engine(engine_path)){
@@ -118,7 +118,7 @@ namespace perception{
         for(int idx: indices){
             Detection det;
             det.box = boxes[idx];
-            det.confidence = confs[idx];
+            det.conf = confs[idx];
             det.class_id = class_ids[idx];
             detections.push_back(det);
         }
