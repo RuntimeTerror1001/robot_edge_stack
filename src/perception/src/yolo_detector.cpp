@@ -3,7 +3,7 @@
 
 namespace perception{
 
-    YOLODetector::YOLODetector():
+    YOLODetector::YOLODetector()
     : input_width_(640),
       input_height_(480),
       conf_thres_(0.25),
@@ -14,7 +14,7 @@ namespace perception{
         conf_thres_ = conf_thresh;
         nms_thres_ = nms_thresh;
 
-        engine_ = std::make_unique<TensorRTEngine()>;
+        engine_ = std::make_unique<TensorRTEngine>();
         if(!engine_->load_engine(engine_path)){
             std::cerr << "Failed to load TensorRT Engine" << std::endl;
             return false;
@@ -33,7 +33,7 @@ namespace perception{
         cv::cvtColor(resized, rgb, cv::COLOR_BGR2RGB);
         rgb.convertTo(rgb, CV_32F, 1.0 / 255.0);
 
-        retrun rgb;
+        return rgb;
     }
 
     std::vector<Detection> YOLODetector::detect(const cv::Mat& image){
