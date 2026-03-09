@@ -12,20 +12,56 @@ find_package(sensor_msgs REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(cv_bridge REQUIRED)
 find_package(image_transport REQUIRED)
+find_package(vision_msgs REQUIRED)
 find_package(OpenCV REQUIRED)
+find_package(CUDA REQUIRED)
 
-include_directories(include)
+# TensorRT (manually specify paths for Jetson)
+set(TensorRT_INCLUDE_DIRS /usr/include/aarch64-linux-gnu)
+set(TensorRT_LIBRARIES
+  /usr/lib/aarch64-linux-gnu/libnvinfer.so
+  /usr/lib/aarch64-linux-gnu/libnvonnxparser.so
+)
+
+include_directories(
+  include
+  ${CUDA_INCLUDE_DIRS}
+  ${TensorRT_INCLUDE_DIRS}
+  ${OpenCV_INCLUDE_DIRS}
+)
+
+# TensorRT Engine Wrapper
+add_library(tensorrt_engine
+  src/tensorrt_engine.cpp
+)
+target_link_libraries(tensorrt_engine
+  ${CUDA_LIBRARIES}
+  ${TENSORRT_LIBRARIES}
+)
+
+# YOLO Detector
+add_library(yolo_detector
+  src/yolo_detector.cpp
+)
+target_link_libraries(yolo_detector
+  tensorrt_engine
+  ${OpenCV_LIBRARIES}
+  ${CUDA_LIBRARIES}
+)
 
 add_executable(perception_node
   src/perception_node.cpp
 )
-
 ament_target_dependencies(perception_node
   rclcpp
   sensor_msgs
   cv_bridge
   image_transport
-  OpenCV
+  vision_msgs
+)
+target_link_libraries(perception_node
+  yolo_detector
+  ${OpenCV_LIBRARIES}
 )
 
 install(TARGETS

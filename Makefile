@@ -31,3 +31,6 @@ laptop-down:
 
 laptop-restart:
 	docker compose $(PROJECT_DIR) -f $(COMPOSE_DIR)/dev.compose.yaml restart $(s)
+
+laptop-logs:
+	docker compose $(PROJECT_DIR) -f $(COMPOSE_DIR)/dev.compose.yaml logs -f $(s)
