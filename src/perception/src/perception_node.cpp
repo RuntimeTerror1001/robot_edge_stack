@@ -96,7 +96,7 @@ namespace perception{
 
         // Publish Detection2DArray
         vision_msgs::msg::Detection2DArray det_array_msg;
-        det_msg_array.header = msg->header;
+        det_array_msg.header = msg->header;
 
         for(const auto& det : detections){
             vision_msgs::msg::Detection2D det_msg;
