@@ -121,6 +121,7 @@ services:
     volumes:
       - ./:/ws:rw
       - /usr/bin/tegrastats:/usr/bin/tegrastats:ro
+      - /sys:/sys:ro
     depends_on:
       - discovery
     command: |

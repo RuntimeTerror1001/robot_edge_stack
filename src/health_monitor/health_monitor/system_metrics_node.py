@@ -84,7 +84,7 @@ class SystemMetricsNode(Node):
             return reading
         
         # GPU Utilization and Frequency: GR3D_FREQ 45%@765
-        gpu_match = re.search(r'GR3D_FREQ (\d+)%@(\d+)', output)
+        gpu_match = re.search(r'GR3D_FREQ (\d+)%@\[?(\d+)\]?', output)
         if gpu_match:
             reading.gpu_percent = float(gpu_match.group(1))
             reading.gpu_freq_mhz = int(gpu_match.group(2))
