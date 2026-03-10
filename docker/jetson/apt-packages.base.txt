@@ -7,3 +7,4 @@ python3-colcon-common-extensions
 ros-humble-cv-bridge
 ros-humble-image-transport
 libopencv-dev
+ros-humble-vision-msgs

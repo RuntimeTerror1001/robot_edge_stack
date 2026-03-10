@@ -11,14 +11,14 @@ namespace perception{
         this->declare_parameter<std::string>("camera_topic", "/front_camera/image_raw");
         this->declare_parameter<std::string>("engine_path", "/ws/models/yolov8n.engine");
         this->declare_parameter<float>("conf_thresh", 0.25);
-        this->declare_parameter<float>("nms_thres", 0.45);
+        this->declare_parameter<float>("nms_thresh", 0.45);
 
         // Get parameters
         this->get_parameter("target_fps", target_fps_);
         this->get_parameter("camera_topic", camera_topic_);
         this->get_parameter("engine_path", engine_path_);
-        this->get_parameter("conf_threshold", conf_thresh_);
-        this->get_parameter("nms_threshold", nms_thresh_);
+        this->get_parameter("conf_thresh", conf_thresh_);
+        this->get_parameter("nms_thresh", nms_thresh_);
 
         // Calculate preprocessing interval
         process_interval_ms_ = 1000.0 / static_cast<double>(target_fps_);
@@ -144,11 +144,18 @@ namespace perception{
         cv::Mat output = image.clone();
 
         for(const auto& det: detections){
+            // Safety check - skip if box is outside image bounds
+            if (det.box.x < 0 || det.box.y < 0 ||
+                det.box.x + det.box.width > image.cols ||
+                det.box.y + det.box.height > image.rows) {
+            continue;
+            }
+
             // Draw bounding box
             cv::rectangle(output, det.box, cv::Scalar(0,255,0), 2);
 
             // Draw Label
-            std::string label = COCO_CLASSES[det.class_id] + " " + 
+            std::string label = "ID " + 
                                 std::to_string(static_cast<int>(det.conf * 100)) + "%";
 
             int baseline;

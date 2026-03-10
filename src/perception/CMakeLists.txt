@@ -36,7 +36,7 @@ add_library(tensorrt_engine
 )
 target_link_libraries(tensorrt_engine
   ${CUDA_LIBRARIES}
-  ${TENSORRT_LIBRARIES}
+  ${TensorRT_LIBRARIES}
 )
 
 # YOLO Detector
