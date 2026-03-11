@@ -14,7 +14,7 @@ thresholds:
   packet_loss_critical: 5.0
 
   # Available bandwidth in Mbps (from NetworkHealth.available_bandwidth)
-  bandwidth_low_mbps: 10.0 # below this -> DEGRADED
+  bandwidth_low_mbps: 1.5 # below this -> DEGRADED
 
   # System load (from SystemMetrics)
   cpu_high: 80.0 # above this -> DEGRADED

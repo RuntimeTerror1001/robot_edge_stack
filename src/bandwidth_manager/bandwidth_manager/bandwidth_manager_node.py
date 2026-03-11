@@ -198,7 +198,7 @@ class BandwidthManagerNode(Node):
                 reasons.append(f'quality={net.quality_score}')
             if net.packet_loss_percent > t.get(f'packet_loss_{mode.lower()}', 0.0):
                 reasons.append(f'loss={net.packet_loss_percent:.1f}%')
-            if net.available_bandwidth> 0.0 and net.available_bandwidth < t['bandwidth_low_mbps']:
+            if net.available_bandwidth > 0.0 and net.available_bandwidth < t['bandwidth_low_mbps']:
                 reasons.append(f'bandwidth={net.available_bandwidth:.1f}Mbps')
         
         if not net.is_stable:
