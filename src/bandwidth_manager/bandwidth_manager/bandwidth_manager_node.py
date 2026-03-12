@@ -160,7 +160,7 @@ class BandwidthManagerNode(Node):
         # DEGRADED: network or compute under meaningful pressure
 
         # Only check bandwidth if non-zero
-        bandwidth_degraded = (net.available_bandwidth > 0.0 and 
+        bandwidth_degraded = (net.available_bandwidth >= 0.1 and 
                               net.available_bandwidth < t['bandwidth_low_mbps'])
         
         if (net.quality_score        < t['quality_degraded']       or
