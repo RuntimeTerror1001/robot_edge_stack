@@ -11,3 +11,5 @@ log
 *.swp
 *.bak
 .DS_Store
+demos/
+images/
