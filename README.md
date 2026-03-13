@@ -14,7 +14,7 @@ Real-time object detection on embedded hardware with network-aware FPS throttlin
 
 ## 📹 Demo Video
 
-**[Watch the full demonstration on my portfolio →](https://runtimeterror1001.github.io/parth-portfolio/#/project/bandwidth-aware-edge-perception-node)**
+**[Watch the full demonstration on my portfolio →](https://runtimeterror1001.github.io/parth-portfolio/#/project/bandwidth-aware-edge-perception-system)**
 
 90-second demonstration of adaptive FPS control under simulated network degradation.
 
